@@ -104,6 +104,8 @@ def train(args: train_args.TrainArgs):
 
   # Model.
   model_class = getattr(models, args.model)
+  print('model_name', args.model)
+  print('model_class', model_class)
   model_kwargs = json.loads(args.model_kwargs_json)
   num_ops = dataset_partitions.num_ops
   model = model_class(num_configs, num_ops, **model_kwargs)

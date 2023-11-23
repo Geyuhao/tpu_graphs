@@ -1,0 +1,501 @@
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+model_name EarlyJoinResGCN
+model_class <class 'tpu_graphs.baselines.tiles.models.EarlyJoinResGCN'>
+562/562 [==============================] - 73s 113ms/step - loss: 14.8731 - opa_metric: 0.7365 - val_loss: 14.9066 - val_opa_metric: 0.7370
+562/562 [==============================] - 64s 107ms/step - loss: 14.2903 - opa_metric: 0.7602 - val_loss: 14.8960 - val_opa_metric: 0.7653
+562/562 [==============================] - 63s 106ms/step - loss: 14.0006 - opa_metric: 0.7768 - val_loss: 14.2632 - val_opa_metric: 0.7718
+562/562 [==============================] - 61s 105ms/step - loss: 13.7887 - opa_metric: 0.7875 - val_loss: 13.7406 - val_opa_metric: 0.7895
+562/562 [==============================] - 62s 104ms/step - loss: 13.7214 - opa_metric: 0.7929 - val_loss: 13.7936 - val_opa_metric: 0.7939
+562/562 [==============================] - 62s 105ms/step - loss: 13.5802 - opa_metric: 0.7983 - val_loss: 13.6645 - val_opa_metric: 0.7772
+562/562 [==============================] - 63s 105ms/step - loss: 13.5598 - opa_metric: 0.8043 - val_loss: 13.8567 - val_opa_metric: 0.8015
+562/562 [==============================] - 63s 106ms/step - loss: 15.1909 - opa_metric: 0.8069 - val_loss: 13.2418 - val_opa_metric: 0.8085
+562/562 [==============================] - 63s 106ms/step - loss: 13.3383 - opa_metric: 0.8105 - val_loss: 13.3235 - val_opa_metric: 0.8046
+562/562 [==============================] - 63s 105ms/step - loss: 13.2600 - opa_metric: 0.8108 - val_loss: 13.4080 - val_opa_metric: 0.8107
+562/562 [==============================] - 63s 105ms/step - loss: 13.2098 - opa_metric: 0.8156 - val_loss: 13.2566 - val_opa_metric: 0.8175
+562/562 [==============================] - 63s 106ms/step - loss: 13.1850 - opa_metric: 0.8178 - val_loss: 13.3858 - val_opa_metric: 0.8148
+562/562 [==============================] - 63s 106ms/step - loss: 13.4259 - opa_metric: 0.8193 - val_loss: 13.5139 - val_opa_metric: 0.8159
+562/562 [==============================] - 63s 106ms/step - loss: 13.4858 - opa_metric: 0.8179 - val_loss: 13.2622 - val_opa_metric: 0.8195
+562/562 [==============================] - 63s 106ms/step - loss: 13.2034 - opa_metric: 0.8202 - val_loss: 13.3883 - val_opa_metric: 0.8089
+562/562 [==============================] - 64s 107ms/step - loss: 13.0817 - opa_metric: 0.8241 - val_loss: 13.5732 - val_opa_metric: 0.8089
+562/562 [==============================] - 63s 107ms/step - loss: 13.0678 - opa_metric: 0.8261 - val_loss: 13.4935 - val_opa_metric: 0.8064
+562/562 [==============================] - 64s 107ms/step - loss: 13.0683 - opa_metric: 0.8251 - val_loss: 13.3650 - val_opa_metric: 0.8158
+562/562 [==============================] - 64s 107ms/step - loss: 13.0330 - opa_metric: 0.8257 - val_loss: 13.8674 - val_opa_metric: 0.8217
+562/562 [==============================] - 64s 108ms/step - loss: 13.0291 - opa_metric: 0.8283 - val_loss: 13.1830 - val_opa_metric: 0.8255
+562/562 [==============================] - 64s 108ms/step - loss: 13.0430 - opa_metric: 0.8289 - val_loss: 13.1354 - val_opa_metric: 0.8341
+562/562 [==============================] - 65s 109ms/step - loss: 13.0029 - opa_metric: 0.8311 - val_loss: 13.0580 - val_opa_metric: 0.8321
+562/562 [==============================] - 65s 109ms/step - loss: 13.0171 - opa_metric: 0.8329 - val_loss: 13.6542 - val_opa_metric: 0.8337
+562/562 [==============================] - 64s 107ms/step - loss: 13.4677 - opa_metric: 0.8350 - val_loss: 13.2202 - val_opa_metric: 0.8301
+562/562 [==============================] - 64s 107ms/step - loss: 12.9213 - opa_metric: 0.8361 - val_loss: 13.3595 - val_opa_metric: 0.8214
+562/562 [==============================] - 64s 107ms/step - loss: 12.9198 - opa_metric: 0.8357 - val_loss: 13.3339 - val_opa_metric: 0.8357
+562/562 [==============================] - 64s 108ms/step - loss: 12.9334 - opa_metric: 0.8341 - val_loss: 13.1601 - val_opa_metric: 0.8344
+562/562 [==============================] - 65s 109ms/step - loss: 12.9880 - opa_metric: 0.8378 - val_loss: 12.9848 - val_opa_metric: 0.8369
+562/562 [==============================] - 64s 108ms/step - loss: 12.8488 - opa_metric: 0.8385 - val_loss: 12.9729 - val_opa_metric: 0.8279
+562/562 [==============================] - 64s 108ms/step - loss: 12.8573 - opa_metric: 0.8373 - val_loss: 13.1005 - val_opa_metric: 0.8311
+562/562 [==============================] - 64s 108ms/step - loss: 12.7779 - opa_metric: 0.8387 - val_loss: 13.2490 - val_opa_metric: 0.8330
+562/562 [==============================] - 64s 107ms/step - loss: 12.8593 - opa_metric: 0.8410 - val_loss: 13.1800 - val_opa_metric: 0.8281
+562/562 [==============================] - 64s 108ms/step - loss: 12.8113 - opa_metric: 0.8423 - val_loss: 12.9936 - val_opa_metric: 0.8363
+562/562 [==============================] - 64s 108ms/step - loss: 12.7546 - opa_metric: 0.8413 - val_loss: 13.1385 - val_opa_metric: 0.8411
+562/562 [==============================] - 65s 109ms/step - loss: 12.8330 - opa_metric: 0.8403 - val_loss: 13.3382 - val_opa_metric: 0.8422
+562/562 [==============================] - 64s 109ms/step - loss: 12.7340 - opa_metric: 0.8438 - val_loss: 13.3817 - val_opa_metric: 0.8352
+562/562 [==============================] - 65s 109ms/step - loss: 12.7769 - opa_metric: 0.8429 - val_loss: 12.9018 - val_opa_metric: 0.8489
+562/562 [==============================] - 66s 111ms/step - loss: 12.7990 - opa_metric: 0.8438 - val_loss: 13.8451 - val_opa_metric: 0.8494
+562/562 [==============================] - 64s 109ms/step - loss: 12.7824 - opa_metric: 0.8445 - val_loss: 13.2673 - val_opa_metric: 0.8410
+562/562 [==============================] - 64s 108ms/step - loss: 12.7153 - opa_metric: 0.8444 - val_loss: 13.1588 - val_opa_metric: 0.8433
+562/562 [==============================] - 64s 107ms/step - loss: 12.7460 - opa_metric: 0.8446 - val_loss: 13.4398 - val_opa_metric: 0.8422
+562/562 [==============================] - 64s 108ms/step - loss: 12.7035 - opa_metric: 0.8455 - val_loss: 13.2077 - val_opa_metric: 0.8489
+562/562 [==============================] - 64s 108ms/step - loss: 12.6920 - opa_metric: 0.8472 - val_loss: 13.2042 - val_opa_metric: 0.8318
+562/562 [==============================] - 64s 108ms/step - loss: 12.7519 - opa_metric: 0.8452 - val_loss: 13.0007 - val_opa_metric: 0.8448
+562/562 [==============================] - 64s 108ms/step - loss: 12.6724 - opa_metric: 0.8475 - val_loss: 13.8058 - val_opa_metric: 0.8368
+562/562 [==============================] - 64s 109ms/step - loss: 12.7091 - opa_metric: 0.8460 - val_loss: 13.1378 - val_opa_metric: 0.8429
+562/562 [==============================] - 64s 108ms/step - loss: 12.7004 - opa_metric: 0.8489 - val_loss: 13.8031 - val_opa_metric: 0.8382
+562/562 [==============================] - 64s 108ms/step - loss: 12.6581 - opa_metric: 0.8481 - val_loss: 13.2084 - val_opa_metric: 0.8468
+562/562 [==============================] - 64s 108ms/step - loss: 12.6991 - opa_metric: 0.8489 - val_loss: 13.0751 - val_opa_metric: 0.8421
+562/562 [==============================] - 65s 109ms/step - loss: 12.9611 - opa_metric: 0.8496 - val_loss: 12.9001 - val_opa_metric: 0.8499
+562/562 [==============================] - 64s 108ms/step - loss: 12.6782 - opa_metric: 0.8496 - val_loss: 13.3330 - val_opa_metric: 0.8443
+562/562 [==============================] - 65s 109ms/step - loss: 12.6728 - opa_metric: 0.8495 - val_loss: 13.1800 - val_opa_metric: 0.8405
+562/562 [==============================] - 64s 108ms/step - loss: 12.7026 - opa_metric: 0.8504 - val_loss: 13.1484 - val_opa_metric: 0.8408
+562/562 [==============================] - 64s 108ms/step - loss: 12.6303 - opa_metric: 0.8516 - val_loss: 13.0404 - val_opa_metric: 0.8533
+562/562 [==============================] - 64s 107ms/step - loss: 12.5744 - opa_metric: 0.8522 - val_loss: 13.1127 - val_opa_metric: 0.8435
+562/562 [==============================] - 63s 108ms/step - loss: 12.5931 - opa_metric: 0.8520 - val_loss: 13.1236 - val_opa_metric: 0.8459
+562/562 [==============================] - 65s 108ms/step - loss: 12.6445 - opa_metric: 0.8531 - val_loss: 13.0931 - val_opa_metric: 0.8506
+562/562 [==============================] - 65s 108ms/step - loss: 12.6322 - opa_metric: 0.8531 - val_loss: 12.8231 - val_opa_metric: 0.8504
+562/562 [==============================] - 64s 108ms/step - loss: 12.6269 - opa_metric: 0.8524 - val_loss: 13.1323 - val_opa_metric: 0.8512
+562/562 [==============================] - 64s 108ms/step - loss: 12.6673 - opa_metric: 0.8530 - val_loss: 13.0266 - val_opa_metric: 0.8451
+562/562 [==============================] - 64s 107ms/step - loss: 12.6056 - opa_metric: 0.8539 - val_loss: 13.0796 - val_opa_metric: 0.8400
+562/562 [==============================] - 64s 108ms/step - loss: 12.5600 - opa_metric: 0.8549 - val_loss: 13.5049 - val_opa_metric: 0.8472
+562/562 [==============================] - 64s 108ms/step - loss: 12.6391 - opa_metric: 0.8531 - val_loss: 13.1345 - val_opa_metric: 0.8474
+562/562 [==============================] - 64s 109ms/step - loss: 12.5435 - opa_metric: 0.8550 - val_loss: 12.9597 - val_opa_metric: 0.8403
+562/562 [==============================] - 64s 108ms/step - loss: 12.5486 - opa_metric: 0.8552 - val_loss: 13.0729 - val_opa_metric: 0.8430
+562/562 [==============================] - 64s 107ms/step - loss: 12.6002 - opa_metric: 0.8548 - val_loss: 12.9664 - val_opa_metric: 0.8592
+562/562 [==============================] - 65s 109ms/step - loss: 12.5682 - opa_metric: 0.8552 - val_loss: 13.2307 - val_opa_metric: 0.8553
+562/562 [==============================] - 64s 108ms/step - loss: 12.6687 - opa_metric: 0.8574 - val_loss: 13.0012 - val_opa_metric: 0.8536
+562/562 [==============================] - 64s 107ms/step - loss: 12.5512 - opa_metric: 0.8568 - val_loss: 13.1424 - val_opa_metric: 0.8459
+562/562 [==============================] - 65s 108ms/step - loss: 12.4940 - opa_metric: 0.8577 - val_loss: 12.9362 - val_opa_metric: 0.8544
+562/562 [==============================] - 65s 108ms/step - loss: 12.5562 - opa_metric: 0.8566 - val_loss: 12.8609 - val_opa_metric: 0.8517
+562/562 [==============================] - 64s 107ms/step - loss: 12.5210 - opa_metric: 0.8579 - val_loss: 13.2923 - val_opa_metric: 0.8505
+562/562 [==============================] - 64s 109ms/step - loss: 12.6129 - opa_metric: 0.8578 - val_loss: 13.6845 - val_opa_metric: 0.8525
+562/562 [==============================] - 64s 107ms/step - loss: 12.5564 - opa_metric: 0.8562 - val_loss: 12.7883 - val_opa_metric: 0.8516
+562/562 [==============================] - 64s 107ms/step - loss: 12.5024 - opa_metric: 0.8589 - val_loss: 12.9195 - val_opa_metric: 0.8555
+562/562 [==============================] - 64s 108ms/step - loss: 12.5598 - opa_metric: 0.8596 - val_loss: 13.3361 - val_opa_metric: 0.8458
+562/562 [==============================] - 64s 107ms/step - loss: 12.4461 - opa_metric: 0.8618 - val_loss: 13.1041 - val_opa_metric: 0.8542
+562/562 [==============================] - 64s 107ms/step - loss: 12.4578 - opa_metric: 0.8608 - val_loss: 13.3009 - val_opa_metric: 0.8569
+562/562 [==============================] - 64s 108ms/step - loss: 12.5292 - opa_metric: 0.8605 - val_loss: 12.8591 - val_opa_metric: 0.8561
+562/562 [==============================] - 64s 107ms/step - loss: 12.5757 - opa_metric: 0.8607 - val_loss: 13.1333 - val_opa_metric: 0.8475
+562/562 [==============================] - 64s 107ms/step - loss: 12.5065 - opa_metric: 0.8608 - val_loss: 12.9407 - val_opa_metric: 0.8522
+562/562 [==============================] - 64s 107ms/step - loss: 12.4826 - opa_metric: 0.8631 - val_loss: 13.5827 - val_opa_metric: 0.8541
+562/562 [==============================] - 65s 110ms/step - loss: 12.4965 - opa_metric: 0.8606 - val_loss: 12.7610 - val_opa_metric: 0.8629
+562/562 [==============================] - 65s 109ms/step - loss: 12.4930 - opa_metric: 0.8610 - val_loss: 12.8040 - val_opa_metric: 0.8584
+562/562 [==============================] - 64s 108ms/step - loss: 12.4425 - opa_metric: 0.8616 - val_loss: 12.8076 - val_opa_metric: 0.8515
+562/562 [==============================] - 65s 109ms/step - loss: 12.4778 - opa_metric: 0.8631 - val_loss: 12.8930 - val_opa_metric: 0.8501
+562/562 [==============================] - 64s 108ms/step - loss: 12.5386 - opa_metric: 0.8621 - val_loss: 12.6435 - val_opa_metric: 0.8620
+562/562 [==============================] - 64s 108ms/step - loss: 12.7516 - opa_metric: 0.8616 - val_loss: 12.9399 - val_opa_metric: 0.8533
+562/562 [==============================] - 63s 107ms/step - loss: 12.5443 - opa_metric: 0.8643 - val_loss: 12.7446 - val_opa_metric: 0.8528
+562/562 [==============================] - 64s 108ms/step - loss: 12.5080 - opa_metric: 0.8610 - val_loss: 12.9935 - val_opa_metric: 0.8495
+562/562 [==============================] - 65s 109ms/step - loss: 12.4954 - opa_metric: 0.8633 - val_loss: 12.9356 - val_opa_metric: 0.8550
+562/562 [==============================] - 64s 108ms/step - loss: 12.4705 - opa_metric: 0.8644 - val_loss: 12.7993 - val_opa_metric: 0.8572
+562/562 [==============================] - 64s 108ms/step - loss: 12.4124 - opa_metric: 0.8638 - val_loss: 12.7678 - val_opa_metric: 0.8619
+562/562 [==============================] - 64s 108ms/step - loss: 12.3931 - opa_metric: 0.8639 - val_loss: 12.8177 - val_opa_metric: 0.8633
+562/562 [==============================] - 64s 107ms/step - loss: 12.4208 - opa_metric: 0.8642 - val_loss: 12.5438 - val_opa_metric: 0.8588
+562/562 [==============================] - 64s 108ms/step - loss: 12.4836 - opa_metric: 0.8627 - val_loss: 12.8157 - val_opa_metric: 0.8580
+562/562 [==============================] - 65s 109ms/step - loss: 12.4171 - opa_metric: 0.8635 - val_loss: 12.9664 - val_opa_metric: 0.8589
+562/562 [==============================] - 64s 109ms/step - loss: 12.4337 - opa_metric: 0.8632 - val_loss: 12.9034 - val_opa_metric: 0.8535
+562/562 [==============================] - 64s 108ms/step - loss: 12.4593 - opa_metric: 0.8646 - val_loss: 12.9083 - val_opa_metric: 0.8562
+562/562 [==============================] - 64s 109ms/step - loss: 12.4379 - opa_metric: 0.8632 - val_loss: 12.7931 - val_opa_metric: 0.8536
+***  Wrote /home/yuhaoge2/out/tpugraphs_tiles/results_1700725060664.csv
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+model_name LateJoinResGCN
+model_class <class 'tpu_graphs.baselines.tiles.models.LateJoinResGCN'>
+562/562 [==============================] - 33s 44ms/step - loss: 15.4997 - opa_metric: 0.7101 - val_loss: 15.3092 - val_opa_metric: 0.7405
+562/562 [==============================] - 28s 44ms/step - loss: 15.2041 - opa_metric: 0.7335 - val_loss: 15.4121 - val_opa_metric: 0.7475
+562/562 [==============================] - 28s 44ms/step - loss: 14.9099 - opa_metric: 0.7346 - val_loss: 14.9516 - val_opa_metric: 0.7374
+562/562 [==============================] - 28s 43ms/step - loss: 14.7872 - opa_metric: 0.7350 - val_loss: 14.6929 - val_opa_metric: 0.7550
+562/562 [==============================] - 28s 43ms/step - loss: 14.7340 - opa_metric: 0.7388 - val_loss: 14.8341 - val_opa_metric: 0.7436
+562/562 [==============================] - 28s 44ms/step - loss: 14.6748 - opa_metric: 0.7397 - val_loss: 14.5548 - val_opa_metric: 0.7435
+562/562 [==============================] - 28s 44ms/step - loss: 14.5340 - opa_metric: 0.7413 - val_loss: 14.5606 - val_opa_metric: 0.7401
+562/562 [==============================] - 29s 44ms/step - loss: 14.5141 - opa_metric: 0.7395 - val_loss: 14.6186 - val_opa_metric: 0.7427
+562/562 [==============================] - 29s 45ms/step - loss: 14.4349 - opa_metric: 0.7443 - val_loss: 14.4993 - val_opa_metric: 0.7430
+562/562 [==============================] - 29s 45ms/step - loss: 14.4653 - opa_metric: 0.7401 - val_loss: 14.4657 - val_opa_metric: 0.7465
+562/562 [==============================] - 29s 46ms/step - loss: 14.3705 - opa_metric: 0.7427 - val_loss: 14.4038 - val_opa_metric: 0.7474
+562/562 [==============================] - 29s 45ms/step - loss: 14.3387 - opa_metric: 0.7402 - val_loss: 14.3269 - val_opa_metric: 0.7455
+562/562 [==============================] - 30s 47ms/step - loss: 14.3912 - opa_metric: 0.7411 - val_loss: 14.3877 - val_opa_metric: 0.7449
+562/562 [==============================] - 30s 47ms/step - loss: 14.3205 - opa_metric: 0.7427 - val_loss: 14.4136 - val_opa_metric: 0.7487
+562/562 [==============================] - 30s 47ms/step - loss: 14.2872 - opa_metric: 0.7417 - val_loss: 14.4283 - val_opa_metric: 0.7480
+562/562 [==============================] - 30s 47ms/step - loss: 14.2479 - opa_metric: 0.7437 - val_loss: 14.3039 - val_opa_metric: 0.7459
+562/562 [==============================] - 30s 46ms/step - loss: 14.2034 - opa_metric: 0.7460 - val_loss: 14.3554 - val_opa_metric: 0.7426
+562/562 [==============================] - 30s 46ms/step - loss: 14.2417 - opa_metric: 0.7463 - val_loss: 14.2684 - val_opa_metric: 0.7531
+562/562 [==============================] - 30s 46ms/step - loss: 14.2196 - opa_metric: 0.7454 - val_loss: 14.2818 - val_opa_metric: 0.7451
+562/562 [==============================] - 30s 47ms/step - loss: 14.2747 - opa_metric: 0.7470 - val_loss: 14.2622 - val_opa_metric: 0.7519
+562/562 [==============================] - 31s 48ms/step - loss: 14.1599 - opa_metric: 0.7486 - val_loss: 14.5159 - val_opa_metric: 0.7522
+562/562 [==============================] - 30s 47ms/step - loss: 14.1134 - opa_metric: 0.7467 - val_loss: 14.3003 - val_opa_metric: 0.7575
+562/562 [==============================] - 31s 48ms/step - loss: 14.1429 - opa_metric: 0.7530 - val_loss: 14.2704 - val_opa_metric: 0.7457
+562/562 [==============================] - 30s 47ms/step - loss: 14.0768 - opa_metric: 0.7535 - val_loss: 14.2730 - val_opa_metric: 0.7507
+562/562 [==============================] - 30s 46ms/step - loss: 14.0301 - opa_metric: 0.7543 - val_loss: 14.1912 - val_opa_metric: 0.7591
+562/562 [==============================] - 30s 47ms/step - loss: 14.0126 - opa_metric: 0.7539 - val_loss: 14.2216 - val_opa_metric: 0.7574
+562/562 [==============================] - 30s 47ms/step - loss: 14.0169 - opa_metric: 0.7575 - val_loss: 14.1164 - val_opa_metric: 0.7549
+562/562 [==============================] - 29s 46ms/step - loss: 13.9876 - opa_metric: 0.7594 - val_loss: 14.3963 - val_opa_metric: 0.7481
+562/562 [==============================] - 30s 46ms/step - loss: 13.9706 - opa_metric: 0.7595 - val_loss: 14.2286 - val_opa_metric: 0.7609
+562/562 [==============================] - 31s 48ms/step - loss: 13.8882 - opa_metric: 0.7646 - val_loss: 13.9704 - val_opa_metric: 0.7597
+562/562 [==============================] - 30s 47ms/step - loss: 13.8803 - opa_metric: 0.7648 - val_loss: 13.9667 - val_opa_metric: 0.7671
+562/562 [==============================] - 30s 47ms/step - loss: 13.9251 - opa_metric: 0.7645 - val_loss: 13.9432 - val_opa_metric: 0.7659
+562/562 [==============================] - 30s 47ms/step - loss: 13.8193 - opa_metric: 0.7658 - val_loss: 13.8573 - val_opa_metric: 0.7703
+562/562 [==============================] - 30s 47ms/step - loss: 13.8847 - opa_metric: 0.7675 - val_loss: 15.0373 - val_opa_metric: 0.7755
+562/562 [==============================] - 30s 47ms/step - loss: 13.9235 - opa_metric: 0.7705 - val_loss: 14.0041 - val_opa_metric: 0.7718
+562/562 [==============================] - 30s 47ms/step - loss: 13.7597 - opa_metric: 0.7714 - val_loss: 14.0752 - val_opa_metric: 0.7701
+562/562 [==============================] - 31s 48ms/step - loss: 13.8299 - opa_metric: 0.7738 - val_loss: 13.9235 - val_opa_metric: 0.7733
+562/562 [==============================] - 31s 48ms/step - loss: 13.9286 - opa_metric: 0.7740 - val_loss: 14.1590 - val_opa_metric: 0.7692
+562/562 [==============================] - 30s 47ms/step - loss: 13.7909 - opa_metric: 0.7749 - val_loss: 13.9628 - val_opa_metric: 0.7742
+562/562 [==============================] - 30s 47ms/step - loss: 13.8122 - opa_metric: 0.7771 - val_loss: 14.1135 - val_opa_metric: 0.7799
+562/562 [==============================] - 31s 48ms/step - loss: 13.7725 - opa_metric: 0.7780 - val_loss: 13.7912 - val_opa_metric: 0.7790
+562/562 [==============================] - 31s 48ms/step - loss: 13.7505 - opa_metric: 0.7789 - val_loss: 13.7835 - val_opa_metric: 0.7772
+562/562 [==============================] - 30s 47ms/step - loss: 13.8300 - opa_metric: 0.7814 - val_loss: 13.9513 - val_opa_metric: 0.7766
+562/562 [==============================] - 30s 47ms/step - loss: 13.7495 - opa_metric: 0.7793 - val_loss: 14.5217 - val_opa_metric: 0.7851
+562/562 [==============================] - 29s 46ms/step - loss: 13.7235 - opa_metric: 0.7826 - val_loss: 13.9144 - val_opa_metric: 0.7875
+562/562 [==============================] - 30s 46ms/step - loss: 13.9516 - opa_metric: 0.7831 - val_loss: 13.9550 - val_opa_metric: 0.7914
+562/562 [==============================] - 30s 47ms/step - loss: 13.7221 - opa_metric: 0.7820 - val_loss: 13.8817 - val_opa_metric: 0.7834
+562/562 [==============================] - 30s 47ms/step - loss: 13.6791 - opa_metric: 0.7843 - val_loss: 13.7593 - val_opa_metric: 0.7913
+562/562 [==============================] - 30s 47ms/step - loss: 15.2765 - opa_metric: 0.7836 - val_loss: 13.8992 - val_opa_metric: 0.7755
+562/562 [==============================] - 30s 47ms/step - loss: 13.6735 - opa_metric: 0.7876 - val_loss: 13.6957 - val_opa_metric: 0.7842
+562/562 [==============================] - 30s 47ms/step - loss: 13.6462 - opa_metric: 0.7842 - val_loss: 13.7904 - val_opa_metric: 0.7821
+562/562 [==============================] - 30s 47ms/step - loss: 13.6553 - opa_metric: 0.7880 - val_loss: 13.7877 - val_opa_metric: 0.7902
+562/562 [==============================] - 30s 47ms/step - loss: 13.5900 - opa_metric: 0.7877 - val_loss: 13.8871 - val_opa_metric: 0.7951
+562/562 [==============================] - 31s 49ms/step - loss: 13.6580 - opa_metric: 0.7890 - val_loss: 13.8954 - val_opa_metric: 0.7790
+562/562 [==============================] - 30s 46ms/step - loss: 14.0135 - opa_metric: 0.7897 - val_loss: 13.9451 - val_opa_metric: 0.7900
+562/562 [==============================] - 30s 48ms/step - loss: 13.5721 - opa_metric: 0.7890 - val_loss: 13.7594 - val_opa_metric: 0.7915
+562/562 [==============================] - 30s 47ms/step - loss: 13.6280 - opa_metric: 0.7902 - val_loss: 14.2943 - val_opa_metric: 0.7942
+562/562 [==============================] - 30s 47ms/step - loss: 13.5878 - opa_metric: 0.7902 - val_loss: 13.6584 - val_opa_metric: 0.7952
+562/562 [==============================] - 31s 48ms/step - loss: 13.6046 - opa_metric: 0.7910 - val_loss: 13.6995 - val_opa_metric: 0.7883
+562/562 [==============================] - 30s 47ms/step - loss: 13.5780 - opa_metric: 0.7931 - val_loss: 13.9173 - val_opa_metric: 0.7927
+562/562 [==============================] - 31s 48ms/step - loss: 13.6228 - opa_metric: 0.7922 - val_loss: 13.6870 - val_opa_metric: 0.7995
+562/562 [==============================] - 31s 47ms/step - loss: 13.6085 - opa_metric: 0.7918 - val_loss: 13.7722 - val_opa_metric: 0.7840
+562/562 [==============================] - 29s 45ms/step - loss: 13.5601 - opa_metric: 0.7916 - val_loss: 13.7324 - val_opa_metric: 0.7993
+562/562 [==============================] - 29s 47ms/step - loss: 13.6551 - opa_metric: 0.7935 - val_loss: 13.8277 - val_opa_metric: 0.7936
+562/562 [==============================] - 29s 46ms/step - loss: 13.5558 - opa_metric: 0.7952 - val_loss: 13.8211 - val_opa_metric: 0.7919
+562/562 [==============================] - 30s 46ms/step - loss: 13.7706 - opa_metric: 0.7951 - val_loss: 13.6510 - val_opa_metric: 0.7923
+562/562 [==============================] - 30s 46ms/step - loss: 13.6249 - opa_metric: 0.7940 - val_loss: 13.7184 - val_opa_metric: 0.7918
+562/562 [==============================] - 30s 47ms/step - loss: 13.5386 - opa_metric: 0.7962 - val_loss: 13.7535 - val_opa_metric: 0.7971
+562/562 [==============================] - 30s 46ms/step - loss: 13.5840 - opa_metric: 0.7962 - val_loss: 13.8098 - val_opa_metric: 0.7989
+562/562 [==============================] - 30s 47ms/step - loss: 13.6078 - opa_metric: 0.7963 - val_loss: 13.7251 - val_opa_metric: 0.7952
+562/562 [==============================] - 30s 46ms/step - loss: 13.5392 - opa_metric: 0.7973 - val_loss: 13.6461 - val_opa_metric: 0.7955
+562/562 [==============================] - 30s 47ms/step - loss: 13.6032 - opa_metric: 0.7972 - val_loss: 13.8113 - val_opa_metric: 0.7888
+562/562 [==============================] - 30s 47ms/step - loss: 13.5199 - opa_metric: 0.7979 - val_loss: 13.8386 - val_opa_metric: 0.7987
+562/562 [==============================] - 29s 46ms/step - loss: 13.5434 - opa_metric: 0.7989 - val_loss: 13.7048 - val_opa_metric: 0.7977
+562/562 [==============================] - 29s 46ms/step - loss: 13.5135 - opa_metric: 0.7991 - val_loss: 13.7291 - val_opa_metric: 0.7947
+562/562 [==============================] - 30s 46ms/step - loss: 13.4733 - opa_metric: 0.7991 - val_loss: 13.8514 - val_opa_metric: 0.7966
+562/562 [==============================] - 30s 47ms/step - loss: 13.5855 - opa_metric: 0.7984 - val_loss: 13.9524 - val_opa_metric: 0.7797
+562/562 [==============================] - 30s 47ms/step - loss: 13.5123 - opa_metric: 0.7981 - val_loss: 13.6195 - val_opa_metric: 0.7890
+562/562 [==============================] - 30s 47ms/step - loss: 17.0715 - opa_metric: 0.7986 - val_loss: 13.6936 - val_opa_metric: 0.7964
+562/562 [==============================] - 29s 46ms/step - loss: 13.8872 - opa_metric: 0.8003 - val_loss: 13.6582 - val_opa_metric: 0.8047
+562/562 [==============================] - 30s 47ms/step - loss: 13.4859 - opa_metric: 0.8007 - val_loss: 13.7229 - val_opa_metric: 0.7962
+562/562 [==============================] - 30s 47ms/step - loss: 13.4923 - opa_metric: 0.7998 - val_loss: 13.5977 - val_opa_metric: 0.7942
+562/562 [==============================] - 30s 48ms/step - loss: 13.5160 - opa_metric: 0.8011 - val_loss: 13.5369 - val_opa_metric: 0.8041
+562/562 [==============================] - 30s 48ms/step - loss: 13.5092 - opa_metric: 0.8033 - val_loss: 13.7690 - val_opa_metric: 0.7978
+562/562 [==============================] - 29s 47ms/step - loss: 13.6900 - opa_metric: 0.8014 - val_loss: 13.6845 - val_opa_metric: 0.7999
+562/562 [==============================] - 30s 47ms/step - loss: 13.4878 - opa_metric: 0.8030 - val_loss: 13.8088 - val_opa_metric: 0.7989
+562/562 [==============================] - 30s 47ms/step - loss: 13.4610 - opa_metric: 0.8013 - val_loss: 13.7183 - val_opa_metric: 0.7971
+562/562 [==============================] - 30s 47ms/step - loss: 13.4564 - opa_metric: 0.8031 - val_loss: 13.5667 - val_opa_metric: 0.8006
+562/562 [==============================] - 30s 47ms/step - loss: 13.4783 - opa_metric: 0.8023 - val_loss: 13.7002 - val_opa_metric: 0.7998
+562/562 [==============================] - 30s 46ms/step - loss: 13.4974 - opa_metric: 0.8020 - val_loss: 13.6306 - val_opa_metric: 0.8046
+562/562 [==============================] - 30s 47ms/step - loss: 13.4747 - opa_metric: 0.8038 - val_loss: 13.6820 - val_opa_metric: 0.8059
+562/562 [==============================] - 30s 46ms/step - loss: 13.4529 - opa_metric: 0.8032 - val_loss: 13.8110 - val_opa_metric: 0.7993
+562/562 [==============================] - 30s 46ms/step - loss: 13.5073 - opa_metric: 0.8043 - val_loss: 14.1047 - val_opa_metric: 0.8059
+562/562 [==============================] - 30s 47ms/step - loss: 13.5219 - opa_metric: 0.8036 - val_loss: 13.6875 - val_opa_metric: 0.8066
+562/562 [==============================] - 30s 48ms/step - loss: 13.5981 - opa_metric: 0.8031 - val_loss: 13.5864 - val_opa_metric: 0.7976
+562/562 [==============================] - 29s 46ms/step - loss: 13.4649 - opa_metric: 0.8024 - val_loss: 13.7967 - val_opa_metric: 0.8081
+562/562 [==============================] - 30s 47ms/step - loss: 13.4570 - opa_metric: 0.8044 - val_loss: 13.7348 - val_opa_metric: 0.7988
+562/562 [==============================] - 30s 47ms/step - loss: 13.7925 - opa_metric: 0.8065 - val_loss: 13.6976 - val_opa_metric: 0.8077
+562/562 [==============================] - 30s 48ms/step - loss: 13.4906 - opa_metric: 0.8045 - val_loss: 13.6137 - val_opa_metric: 0.8030
+562/562 [==============================] - 31s 48ms/step - loss: 13.4558 - opa_metric: 0.8048 - val_loss: 13.5795 - val_opa_metric: 0.8088
+***  Wrote /home/yuhaoge2/out/tpugraphs_tiles/results_1700732726886.csv
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+model_name EarlyJoinSAGE
+model_class <class 'tpu_graphs.baselines.tiles.models.EarlyJoinSAGE'>
+562/562 [==============================] - 37s 52ms/step - loss: 14.5537 - opa_metric: 0.7372 - val_loss: 14.2802 - val_opa_metric: 0.7355
+562/562 [==============================] - 33s 52ms/step - loss: 14.3298 - opa_metric: 0.7455 - val_loss: 14.5434 - val_opa_metric: 0.7775
+562/562 [==============================] - 33s 52ms/step - loss: 13.8565 - opa_metric: 0.7768 - val_loss: 14.0534 - val_opa_metric: 0.7929
+562/562 [==============================] - 33s 52ms/step - loss: 13.6352 - opa_metric: 0.7886 - val_loss: 13.6510 - val_opa_metric: 0.7880
+562/562 [==============================] - 33s 52ms/step - loss: 13.4753 - opa_metric: 0.8013 - val_loss: 13.3309 - val_opa_metric: 0.8049
+562/562 [==============================] - 33s 52ms/step - loss: 13.3719 - opa_metric: 0.8042 - val_loss: 14.0152 - val_opa_metric: 0.8056
+562/562 [==============================] - 32s 52ms/step - loss: 13.3250 - opa_metric: 0.8099 - val_loss: 13.7348 - val_opa_metric: 0.8043
+562/562 [==============================] - 33s 52ms/step - loss: 13.2834 - opa_metric: 0.8149 - val_loss: 13.2549 - val_opa_metric: 0.8165
+562/562 [==============================] - 32s 52ms/step - loss: 13.2077 - opa_metric: 0.8173 - val_loss: 13.3223 - val_opa_metric: 0.8236
+562/562 [==============================] - 32s 52ms/step - loss: 13.2189 - opa_metric: 0.8203 - val_loss: 13.2868 - val_opa_metric: 0.8167
+562/562 [==============================] - 33s 52ms/step - loss: 13.1673 - opa_metric: 0.8236 - val_loss: 13.0619 - val_opa_metric: 0.8316
+562/562 [==============================] - 33s 52ms/step - loss: 13.1014 - opa_metric: 0.8256 - val_loss: 13.1160 - val_opa_metric: 0.8248
+562/562 [==============================] - 33s 52ms/step - loss: 12.9874 - opa_metric: 0.8282 - val_loss: 13.1150 - val_opa_metric: 0.8299
+562/562 [==============================] - 33s 51ms/step - loss: 12.9504 - opa_metric: 0.8302 - val_loss: 13.4476 - val_opa_metric: 0.8275
+562/562 [==============================] - 33s 51ms/step - loss: 12.8870 - opa_metric: 0.8346 - val_loss: 13.1390 - val_opa_metric: 0.8329
+562/562 [==============================] - 32s 51ms/step - loss: 12.9896 - opa_metric: 0.8353 - val_loss: 13.2895 - val_opa_metric: 0.8302
+562/562 [==============================] - 33s 52ms/step - loss: 12.8842 - opa_metric: 0.8352 - val_loss: 13.1661 - val_opa_metric: 0.8311
+562/562 [==============================] - 32s 51ms/step - loss: 12.8187 - opa_metric: 0.8402 - val_loss: 13.0227 - val_opa_metric: 0.8351
+562/562 [==============================] - 33s 51ms/step - loss: 12.7590 - opa_metric: 0.8403 - val_loss: 12.9868 - val_opa_metric: 0.8443
+562/562 [==============================] - 32s 51ms/step - loss: 12.7434 - opa_metric: 0.8430 - val_loss: 13.0611 - val_opa_metric: 0.8434
+562/562 [==============================] - 32s 51ms/step - loss: 13.1327 - opa_metric: 0.8436 - val_loss: 13.8005 - val_opa_metric: 0.8254
+562/562 [==============================] - 33s 52ms/step - loss: 12.7607 - opa_metric: 0.8436 - val_loss: 13.1666 - val_opa_metric: 0.8295
+562/562 [==============================] - 33s 52ms/step - loss: 12.6834 - opa_metric: 0.8467 - val_loss: 12.8609 - val_opa_metric: 0.8436
+562/562 [==============================] - 33s 52ms/step - loss: 12.6715 - opa_metric: 0.8484 - val_loss: 13.1404 - val_opa_metric: 0.8378
+562/562 [==============================] - 33s 52ms/step - loss: 12.6305 - opa_metric: 0.8488 - val_loss: 13.0463 - val_opa_metric: 0.8343
+562/562 [==============================] - 32s 52ms/step - loss: 12.5852 - opa_metric: 0.8480 - val_loss: 12.9543 - val_opa_metric: 0.8467
+562/562 [==============================] - 33s 52ms/step - loss: 12.6062 - opa_metric: 0.8490 - val_loss: 12.6591 - val_opa_metric: 0.8567
+562/562 [==============================] - 33s 52ms/step - loss: 12.5924 - opa_metric: 0.8503 - val_loss: 12.7252 - val_opa_metric: 0.8501
+562/562 [==============================] - 33s 52ms/step - loss: 12.5987 - opa_metric: 0.8499 - val_loss: 13.0366 - val_opa_metric: 0.8428
+562/562 [==============================] - 33s 52ms/step - loss: 12.5521 - opa_metric: 0.8518 - val_loss: 12.7834 - val_opa_metric: 0.8572
+562/562 [==============================] - 32s 52ms/step - loss: 12.5446 - opa_metric: 0.8530 - val_loss: 13.0829 - val_opa_metric: 0.8446
+562/562 [==============================] - 32s 51ms/step - loss: 12.5038 - opa_metric: 0.8548 - val_loss: 12.6166 - val_opa_metric: 0.8550
+562/562 [==============================] - 33s 52ms/step - loss: 12.5905 - opa_metric: 0.8538 - val_loss: 13.0893 - val_opa_metric: 0.8462
+562/562 [==============================] - 32s 52ms/step - loss: 12.5028 - opa_metric: 0.8583 - val_loss: 12.8204 - val_opa_metric: 0.8569
+562/562 [==============================] - 33s 51ms/step - loss: 12.5072 - opa_metric: 0.8565 - val_loss: 12.6908 - val_opa_metric: 0.8497
+562/562 [==============================] - 33s 52ms/step - loss: 12.4931 - opa_metric: 0.8547 - val_loss: 12.7297 - val_opa_metric: 0.8490
+562/562 [==============================] - 32s 52ms/step - loss: 12.4851 - opa_metric: 0.8576 - val_loss: 12.6494 - val_opa_metric: 0.8493
+562/562 [==============================] - 32s 52ms/step - loss: 12.4903 - opa_metric: 0.8577 - val_loss: 12.9845 - val_opa_metric: 0.8561
+562/562 [==============================] - 32s 51ms/step - loss: 12.4682 - opa_metric: 0.8564 - val_loss: 12.7475 - val_opa_metric: 0.8527
+562/562 [==============================] - 32s 51ms/step - loss: 12.4510 - opa_metric: 0.8578 - val_loss: 12.7723 - val_opa_metric: 0.8534
+562/562 [==============================] - 33s 52ms/step - loss: 12.4463 - opa_metric: 0.8591 - val_loss: 12.7232 - val_opa_metric: 0.8533
+562/562 [==============================] - 33s 52ms/step - loss: 12.4641 - opa_metric: 0.8611 - val_loss: 12.7482 - val_opa_metric: 0.8575
+562/562 [==============================] - 33s 51ms/step - loss: 12.4338 - opa_metric: 0.8600 - val_loss: 12.9760 - val_opa_metric: 0.8534
+562/562 [==============================] - 33s 51ms/step - loss: 12.4574 - opa_metric: 0.8607 - val_loss: 12.6115 - val_opa_metric: 0.8603
+562/562 [==============================] - 33s 52ms/step - loss: 12.4319 - opa_metric: 0.8605 - val_loss: 12.6779 - val_opa_metric: 0.8609
+562/562 [==============================] - 33s 52ms/step - loss: 12.4612 - opa_metric: 0.8624 - val_loss: 12.8419 - val_opa_metric: 0.8527
+562/562 [==============================] - 33s 51ms/step - loss: 12.4234 - opa_metric: 0.8620 - val_loss: 12.6718 - val_opa_metric: 0.8560
+562/562 [==============================] - 33s 52ms/step - loss: 12.3445 - opa_metric: 0.8618 - val_loss: 13.4384 - val_opa_metric: 0.8535
+562/562 [==============================] - 32s 51ms/step - loss: 12.3484 - opa_metric: 0.8633 - val_loss: 12.6130 - val_opa_metric: 0.8518
+562/562 [==============================] - 32s 51ms/step - loss: 12.4063 - opa_metric: 0.8625 - val_loss: 12.7983 - val_opa_metric: 0.8535
+562/562 [==============================] - 32s 51ms/step - loss: 12.3734 - opa_metric: 0.8633 - val_loss: 12.9772 - val_opa_metric: 0.8514
+562/562 [==============================] - 33s 51ms/step - loss: 12.4272 - opa_metric: 0.8638 - val_loss: 13.5176 - val_opa_metric: 0.8568
+562/562 [==============================] - 32s 52ms/step - loss: 12.5809 - opa_metric: 0.8667 - val_loss: 13.0298 - val_opa_metric: 0.8547
+562/562 [==============================] - 32s 51ms/step - loss: 12.3714 - opa_metric: 0.8646 - val_loss: 12.3932 - val_opa_metric: 0.8615
+562/562 [==============================] - 33s 52ms/step - loss: 12.6658 - opa_metric: 0.8645 - val_loss: 12.5494 - val_opa_metric: 0.8635
+562/562 [==============================] - 32s 52ms/step - loss: 12.3656 - opa_metric: 0.8639 - val_loss: 12.6989 - val_opa_metric: 0.8578
+562/562 [==============================] - 33s 52ms/step - loss: 12.3321 - opa_metric: 0.8661 - val_loss: 12.7982 - val_opa_metric: 0.8669
+562/562 [==============================] - 33s 52ms/step - loss: 12.2988 - opa_metric: 0.8667 - val_loss: 12.8610 - val_opa_metric: 0.8631
+562/562 [==============================] - 32s 52ms/step - loss: 12.3457 - opa_metric: 0.8662 - val_loss: 13.0537 - val_opa_metric: 0.8576
+562/562 [==============================] - 32s 51ms/step - loss: 12.3013 - opa_metric: 0.8669 - val_loss: 12.6863 - val_opa_metric: 0.8576
+562/562 [==============================] - 33s 51ms/step - loss: 12.3194 - opa_metric: 0.8664 - val_loss: 12.4537 - val_opa_metric: 0.8629
+562/562 [==============================] - 33s 52ms/step - loss: 12.2894 - opa_metric: 0.8663 - val_loss: 12.9080 - val_opa_metric: 0.8563
+562/562 [==============================] - 33s 52ms/step - loss: 12.3064 - opa_metric: 0.8701 - val_loss: 12.4379 - val_opa_metric: 0.8648
+562/562 [==============================] - 33s 52ms/step - loss: 12.2739 - opa_metric: 0.8675 - val_loss: 12.5871 - val_opa_metric: 0.8621
+562/562 [==============================] - 33s 52ms/step - loss: 12.3576 - opa_metric: 0.8685 - val_loss: 12.6883 - val_opa_metric: 0.8643
+562/562 [==============================] - 33s 52ms/step - loss: 12.2787 - opa_metric: 0.8672 - val_loss: 12.5613 - val_opa_metric: 0.8623
+562/562 [==============================] - 33s 51ms/step - loss: 12.3346 - opa_metric: 0.8691 - val_loss: 12.5323 - val_opa_metric: 0.8664
+562/562 [==============================] - 33s 52ms/step - loss: 12.2527 - opa_metric: 0.8699 - val_loss: 12.6104 - val_opa_metric: 0.8615
+562/562 [==============================] - 32s 52ms/step - loss: 12.2818 - opa_metric: 0.8695 - val_loss: 12.4553 - val_opa_metric: 0.8721
+562/562 [==============================] - 32s 52ms/step - loss: 12.2762 - opa_metric: 0.8708 - val_loss: 12.6252 - val_opa_metric: 0.8658
+562/562 [==============================] - 33s 52ms/step - loss: 12.2656 - opa_metric: 0.8703 - val_loss: 12.5932 - val_opa_metric: 0.8597
+562/562 [==============================] - 33s 51ms/step - loss: 12.2743 - opa_metric: 0.8705 - val_loss: 12.5279 - val_opa_metric: 0.8672
+562/562 [==============================] - 32s 51ms/step - loss: 12.2665 - opa_metric: 0.8701 - val_loss: 12.5342 - val_opa_metric: 0.8648
+562/562 [==============================] - 32s 51ms/step - loss: 12.2613 - opa_metric: 0.8721 - val_loss: 12.5139 - val_opa_metric: 0.8632
+562/562 [==============================] - 33s 51ms/step - loss: 12.2463 - opa_metric: 0.8715 - val_loss: 12.5530 - val_opa_metric: 0.8613
+562/562 [==============================] - 32s 51ms/step - loss: 12.2739 - opa_metric: 0.8711 - val_loss: 12.4560 - val_opa_metric: 0.8714
+562/562 [==============================] - 32s 51ms/step - loss: 12.2645 - opa_metric: 0.8706 - val_loss: 12.5305 - val_opa_metric: 0.8617
+562/562 [==============================] - 32s 51ms/step - loss: 12.2593 - opa_metric: 0.8702 - val_loss: 12.8291 - val_opa_metric: 0.8667
+562/562 [==============================] - 32s 51ms/step - loss: 12.2737 - opa_metric: 0.8729 - val_loss: 12.5976 - val_opa_metric: 0.8721
+562/562 [==============================] - 33s 52ms/step - loss: 12.1982 - opa_metric: 0.8721 - val_loss: 12.5972 - val_opa_metric: 0.8708
+562/562 [==============================] - 32s 51ms/step - loss: 12.2237 - opa_metric: 0.8730 - val_loss: 12.3730 - val_opa_metric: 0.8682
+562/562 [==============================] - 32s 51ms/step - loss: 12.2640 - opa_metric: 0.8710 - val_loss: 12.6116 - val_opa_metric: 0.8608
+562/562 [==============================] - 33s 52ms/step - loss: 12.3575 - opa_metric: 0.8737 - val_loss: 12.4324 - val_opa_metric: 0.8709
+562/562 [==============================] - 33s 52ms/step - loss: 12.2287 - opa_metric: 0.8729 - val_loss: 12.5748 - val_opa_metric: 0.8657
+562/562 [==============================] - 33s 51ms/step - loss: 12.2759 - opa_metric: 0.8729 - val_loss: 12.7890 - val_opa_metric: 0.8654
+562/562 [==============================] - 33s 51ms/step - loss: 13.0705 - opa_metric: 0.8738 - val_loss: 12.8117 - val_opa_metric: 0.8652
+562/562 [==============================] - 33s 51ms/step - loss: 12.2295 - opa_metric: 0.8724 - val_loss: 12.6098 - val_opa_metric: 0.8707
+562/562 [==============================] - 32s 52ms/step - loss: 12.2010 - opa_metric: 0.8741 - val_loss: 12.6719 - val_opa_metric: 0.8668
+562/562 [==============================] - 32s 51ms/step - loss: 12.2096 - opa_metric: 0.8745 - val_loss: 12.6125 - val_opa_metric: 0.8670
+562/562 [==============================] - 32s 51ms/step - loss: 12.2378 - opa_metric: 0.8734 - val_loss: 12.3585 - val_opa_metric: 0.8724
+562/562 [==============================] - 33s 52ms/step - loss: 12.1774 - opa_metric: 0.8747 - val_loss: 12.6119 - val_opa_metric: 0.8669
+562/562 [==============================] - 32s 52ms/step - loss: 12.2453 - opa_metric: 0.8745 - val_loss: 12.4707 - val_opa_metric: 0.8731
+562/562 [==============================] - 32s 51ms/step - loss: 12.3089 - opa_metric: 0.8746 - val_loss: 12.3992 - val_opa_metric: 0.8679
+562/562 [==============================] - 32s 52ms/step - loss: 12.2508 - opa_metric: 0.8721 - val_loss: 12.8066 - val_opa_metric: 0.8634
+562/562 [==============================] - 31s 51ms/step - loss: 12.2357 - opa_metric: 0.8748 - val_loss: 12.6006 - val_opa_metric: 0.8651
+562/562 [==============================] - 32s 50ms/step - loss: 12.1950 - opa_metric: 0.8751 - val_loss: 12.6153 - val_opa_metric: 0.8666
+562/562 [==============================] - 32s 50ms/step - loss: 12.2224 - opa_metric: 0.8735 - val_loss: 12.5419 - val_opa_metric: 0.8640
+562/562 [==============================] - 31s 50ms/step - loss: 12.2042 - opa_metric: 0.8744 - val_loss: 12.6867 - val_opa_metric: 0.8604
+562/562 [==============================] - 32s 50ms/step - loss: 12.2097 - opa_metric: 0.8748 - val_loss: 12.7993 - val_opa_metric: 0.8706
+562/562 [==============================] - 32s 50ms/step - loss: 12.1709 - opa_metric: 0.8770 - val_loss: 12.5621 - val_opa_metric: 0.8687
+***  Wrote /home/yuhaoge2/out/tpugraphs_tiles/results_1700736030116.csv
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+model_name LateJoinSAGE
+model_class <class 'tpu_graphs.baselines.tiles.models.LateJoinSAGE'>
+562/562 [==============================] - 19s 20ms/step - loss: 15.4118 - opa_metric: 0.7281 - val_loss: 15.1695 - val_opa_metric: 0.7392
+562/562 [==============================] - 15s 20ms/step - loss: 15.1558 - opa_metric: 0.7334 - val_loss: 14.9850 - val_opa_metric: 0.7326
+562/562 [==============================] - 15s 20ms/step - loss: 14.9005 - opa_metric: 0.7374 - val_loss: 15.0785 - val_opa_metric: 0.7389
+562/562 [==============================] - 15s 20ms/step - loss: 14.8094 - opa_metric: 0.7346 - val_loss: 14.8776 - val_opa_metric: 0.7436
+562/562 [==============================] - 15s 20ms/step - loss: 14.7710 - opa_metric: 0.7374 - val_loss: 14.7761 - val_opa_metric: 0.7361
+562/562 [==============================] - 15s 20ms/step - loss: 14.5946 - opa_metric: 0.7368 - val_loss: 14.8908 - val_opa_metric: 0.7453
+562/562 [==============================] - 15s 20ms/step - loss: 14.6821 - opa_metric: 0.7386 - val_loss: 15.5731 - val_opa_metric: 0.7431
+562/562 [==============================] - 14s 19ms/step - loss: 14.5268 - opa_metric: 0.7393 - val_loss: 14.4817 - val_opa_metric: 0.7488
+562/562 [==============================] - 15s 19ms/step - loss: 14.6133 - opa_metric: 0.7397 - val_loss: 15.0808 - val_opa_metric: 0.7441
+562/562 [==============================] - 14s 19ms/step - loss: 14.6189 - opa_metric: 0.7391 - val_loss: 14.4874 - val_opa_metric: 0.7460
+562/562 [==============================] - 15s 19ms/step - loss: 14.5170 - opa_metric: 0.7385 - val_loss: 14.0921 - val_opa_metric: 0.7427
+562/562 [==============================] - 15s 19ms/step - loss: 14.4482 - opa_metric: 0.7398 - val_loss: 14.2287 - val_opa_metric: 0.7397
+562/562 [==============================] - 14s 19ms/step - loss: 14.4673 - opa_metric: 0.7408 - val_loss: 14.7907 - val_opa_metric: 0.7386
+562/562 [==============================] - 14s 19ms/step - loss: 14.3548 - opa_metric: 0.7422 - val_loss: 14.3033 - val_opa_metric: 0.7356
+562/562 [==============================] - 14s 19ms/step - loss: 14.2821 - opa_metric: 0.7427 - val_loss: 14.3128 - val_opa_metric: 0.7479
+562/562 [==============================] - 14s 19ms/step - loss: 14.2388 - opa_metric: 0.7424 - val_loss: 14.4148 - val_opa_metric: 0.7486
+562/562 [==============================] - 14s 19ms/step - loss: 14.2818 - opa_metric: 0.7419 - val_loss: 14.3056 - val_opa_metric: 0.7434
+562/562 [==============================] - 15s 19ms/step - loss: 17.8747 - opa_metric: 0.7426 - val_loss: 14.4343 - val_opa_metric: 0.7393
+562/562 [==============================] - 15s 19ms/step - loss: 14.2194 - opa_metric: 0.7426 - val_loss: 14.0608 - val_opa_metric: 0.7417
+562/562 [==============================] - 15s 19ms/step - loss: 14.2100 - opa_metric: 0.7444 - val_loss: 14.5604 - val_opa_metric: 0.7389
+562/562 [==============================] - 15s 19ms/step - loss: 14.2330 - opa_metric: 0.7440 - val_loss: 14.5667 - val_opa_metric: 0.7478
+562/562 [==============================] - 14s 19ms/step - loss: 14.2103 - opa_metric: 0.7429 - val_loss: 14.3007 - val_opa_metric: 0.7496
+562/562 [==============================] - 15s 19ms/step - loss: 14.1509 - opa_metric: 0.7458 - val_loss: 14.1701 - val_opa_metric: 0.7420
+562/562 [==============================] - 14s 19ms/step - loss: 14.5829 - opa_metric: 0.7443 - val_loss: 14.4145 - val_opa_metric: 0.7458
+562/562 [==============================] - 14s 19ms/step - loss: 14.1520 - opa_metric: 0.7472 - val_loss: 14.5167 - val_opa_metric: 0.7540
+562/562 [==============================] - 14s 19ms/step - loss: 14.1016 - opa_metric: 0.7455 - val_loss: 14.0102 - val_opa_metric: 0.7481
+562/562 [==============================] - 14s 19ms/step - loss: 14.1656 - opa_metric: 0.7479 - val_loss: 14.3975 - val_opa_metric: 0.7418
+562/562 [==============================] - 15s 19ms/step - loss: 15.7981 - opa_metric: 0.7485 - val_loss: 14.3957 - val_opa_metric: 0.7446
+562/562 [==============================] - 14s 19ms/step - loss: 14.0439 - opa_metric: 0.7477 - val_loss: 14.7162 - val_opa_metric: 0.7437
+562/562 [==============================] - 14s 19ms/step - loss: 14.0599 - opa_metric: 0.7478 - val_loss: 14.1064 - val_opa_metric: 0.7472
+562/562 [==============================] - 14s 19ms/step - loss: 14.1755 - opa_metric: 0.7488 - val_loss: 14.2008 - val_opa_metric: 0.7517
+562/562 [==============================] - 15s 19ms/step - loss: 14.2334 - opa_metric: 0.7463 - val_loss: 13.9462 - val_opa_metric: 0.7487
+562/562 [==============================] - 15s 19ms/step - loss: 15.2133 - opa_metric: 0.7492 - val_loss: 14.3888 - val_opa_metric: 0.7491
+562/562 [==============================] - 14s 19ms/step - loss: 14.1239 - opa_metric: 0.7475 - val_loss: 14.1389 - val_opa_metric: 0.7515
+562/562 [==============================] - 15s 19ms/step - loss: 14.0844 - opa_metric: 0.7472 - val_loss: 14.2201 - val_opa_metric: 0.7417
+562/562 [==============================] - 15s 19ms/step - loss: 13.9845 - opa_metric: 0.7492 - val_loss: 14.0803 - val_opa_metric: 0.7460
+562/562 [==============================] - 14s 19ms/step - loss: 14.0289 - opa_metric: 0.7508 - val_loss: 15.1018 - val_opa_metric: 0.7464
+562/562 [==============================] - 15s 19ms/step - loss: 14.1402 - opa_metric: 0.7502 - val_loss: 14.3512 - val_opa_metric: 0.7470
+562/562 [==============================] - 15s 19ms/step - loss: 14.0232 - opa_metric: 0.7495 - val_loss: 13.9765 - val_opa_metric: 0.7474
+562/562 [==============================] - 14s 19ms/step - loss: 13.9595 - opa_metric: 0.7507 - val_loss: 14.0511 - val_opa_metric: 0.7493
+562/562 [==============================] - 15s 19ms/step - loss: 14.0147 - opa_metric: 0.7528 - val_loss: 14.3586 - val_opa_metric: 0.7563
+562/562 [==============================] - 14s 19ms/step - loss: 13.9811 - opa_metric: 0.7501 - val_loss: 14.1932 - val_opa_metric: 0.7435
+562/562 [==============================] - 14s 19ms/step - loss: 13.9696 - opa_metric: 0.7526 - val_loss: 13.8672 - val_opa_metric: 0.7639
+562/562 [==============================] - 14s 19ms/step - loss: 14.0010 - opa_metric: 0.7519 - val_loss: 14.1991 - val_opa_metric: 0.7538
+562/562 [==============================] - 15s 19ms/step - loss: 13.9367 - opa_metric: 0.7505 - val_loss: 13.9642 - val_opa_metric: 0.7498
+562/562 [==============================] - 14s 19ms/step - loss: 14.2226 - opa_metric: 0.7512 - val_loss: 14.1613 - val_opa_metric: 0.7512
+562/562 [==============================] - 15s 19ms/step - loss: 13.9061 - opa_metric: 0.7551 - val_loss: 13.9655 - val_opa_metric: 0.7554
+562/562 [==============================] - 15s 20ms/step - loss: 14.0381 - opa_metric: 0.7536 - val_loss: 13.7675 - val_opa_metric: 0.7593
+562/562 [==============================] - 15s 20ms/step - loss: 14.7575 - opa_metric: 0.7567 - val_loss: 13.8591 - val_opa_metric: 0.7587
+562/562 [==============================] - 14s 19ms/step - loss: 14.2300 - opa_metric: 0.7580 - val_loss: 14.1820 - val_opa_metric: 0.7573
+562/562 [==============================] - 15s 20ms/step - loss: 13.9584 - opa_metric: 0.7598 - val_loss: 14.3980 - val_opa_metric: 0.7611
+562/562 [==============================] - 15s 20ms/step - loss: 13.8807 - opa_metric: 0.7633 - val_loss: 13.9198 - val_opa_metric: 0.7608
+562/562 [==============================] - 15s 20ms/step - loss: 13.8775 - opa_metric: 0.7654 - val_loss: 13.8208 - val_opa_metric: 0.7616
+562/562 [==============================] - 15s 19ms/step - loss: 13.8191 - opa_metric: 0.7686 - val_loss: 13.7997 - val_opa_metric: 0.7639
+562/562 [==============================] - 14s 19ms/step - loss: 13.7549 - opa_metric: 0.7747 - val_loss: 13.6173 - val_opa_metric: 0.7790
+562/562 [==============================] - 15s 19ms/step - loss: 13.7574 - opa_metric: 0.7780 - val_loss: 14.1407 - val_opa_metric: 0.7768
+562/562 [==============================] - 15s 19ms/step - loss: 13.6871 - opa_metric: 0.7802 - val_loss: 13.9853 - val_opa_metric: 0.7776
+562/562 [==============================] - 15s 20ms/step - loss: 13.6281 - opa_metric: 0.7839 - val_loss: 13.8590 - val_opa_metric: 0.7856
+562/562 [==============================] - 14s 20ms/step - loss: 13.6430 - opa_metric: 0.7846 - val_loss: 13.9349 - val_opa_metric: 0.7854
+562/562 [==============================] - 15s 20ms/step - loss: 13.5695 - opa_metric: 0.7894 - val_loss: 13.5836 - val_opa_metric: 0.7852
+562/562 [==============================] - 14s 20ms/step - loss: 13.6033 - opa_metric: 0.7911 - val_loss: 13.6589 - val_opa_metric: 0.7962
+562/562 [==============================] - 15s 20ms/step - loss: 13.5767 - opa_metric: 0.7920 - val_loss: 14.2133 - val_opa_metric: 0.7986
+562/562 [==============================] - 15s 20ms/step - loss: 13.5452 - opa_metric: 0.7911 - val_loss: 13.6335 - val_opa_metric: 0.7872
+562/562 [==============================] - 14s 19ms/step - loss: 13.5088 - opa_metric: 0.7954 - val_loss: 13.8944 - val_opa_metric: 0.8008
+562/562 [==============================] - 14s 19ms/step - loss: 13.5657 - opa_metric: 0.7942 - val_loss: 13.6750 - val_opa_metric: 0.7819
+562/562 [==============================] - 14s 19ms/step - loss: 13.5067 - opa_metric: 0.7955 - val_loss: 13.4163 - val_opa_metric: 0.8043
+562/562 [==============================] - 15s 19ms/step - loss: 13.5696 - opa_metric: 0.7948 - val_loss: 13.7068 - val_opa_metric: 0.7946
+562/562 [==============================] - 15s 19ms/step - loss: 13.5409 - opa_metric: 0.7965 - val_loss: 13.5321 - val_opa_metric: 0.7954
+562/562 [==============================] - 15s 19ms/step - loss: 13.5910 - opa_metric: 0.7970 - val_loss: 13.8146 - val_opa_metric: 0.7969
+562/562 [==============================] - 14s 19ms/step - loss: 13.5406 - opa_metric: 0.7965 - val_loss: 13.3906 - val_opa_metric: 0.8040
+562/562 [==============================] - 14s 19ms/step - loss: 13.4580 - opa_metric: 0.7986 - val_loss: 13.5420 - val_opa_metric: 0.8159
+562/562 [==============================] - 14s 19ms/step - loss: 13.4806 - opa_metric: 0.8004 - val_loss: 13.4122 - val_opa_metric: 0.8016
+562/562 [==============================] - 14s 19ms/step - loss: 13.4813 - opa_metric: 0.7995 - val_loss: 13.7592 - val_opa_metric: 0.7984
+562/562 [==============================] - 15s 19ms/step - loss: 13.5294 - opa_metric: 0.7989 - val_loss: 13.4344 - val_opa_metric: 0.8099
+562/562 [==============================] - 15s 19ms/step - loss: 13.4248 - opa_metric: 0.8017 - val_loss: 13.9813 - val_opa_metric: 0.7875
+562/562 [==============================] - 14s 19ms/step - loss: 13.6024 - opa_metric: 0.8032 - val_loss: 13.5913 - val_opa_metric: 0.7932
+562/562 [==============================] - 14s 19ms/step - loss: 13.4103 - opa_metric: 0.8034 - val_loss: 13.6485 - val_opa_metric: 0.8026
+562/562 [==============================] - 14s 19ms/step - loss: 13.4345 - opa_metric: 0.8052 - val_loss: 13.4420 - val_opa_metric: 0.8119
+562/562 [==============================] - 15s 20ms/step - loss: 14.3162 - opa_metric: 0.8012 - val_loss: 13.3853 - val_opa_metric: 0.8020
+562/562 [==============================] - 14s 19ms/step - loss: 13.4824 - opa_metric: 0.8028 - val_loss: 14.2068 - val_opa_metric: 0.8007
+562/562 [==============================] - 15s 19ms/step - loss: 13.4600 - opa_metric: 0.8037 - val_loss: 14.1467 - val_opa_metric: 0.8099
+562/562 [==============================] - 15s 19ms/step - loss: 13.4612 - opa_metric: 0.8039 - val_loss: 13.6089 - val_opa_metric: 0.8115
+562/562 [==============================] - 15s 19ms/step - loss: 13.3939 - opa_metric: 0.8079 - val_loss: 13.7826 - val_opa_metric: 0.8037
+562/562 [==============================] - 14s 19ms/step - loss: 13.4631 - opa_metric: 0.8063 - val_loss: 13.6030 - val_opa_metric: 0.8077
+562/562 [==============================] - 14s 19ms/step - loss: 13.3978 - opa_metric: 0.8052 - val_loss: 13.7212 - val_opa_metric: 0.8138
+562/562 [==============================] - 15s 19ms/step - loss: 13.4165 - opa_metric: 0.8053 - val_loss: 13.5346 - val_opa_metric: 0.8053
+562/562 [==============================] - 14s 19ms/step - loss: 13.4211 - opa_metric: 0.8047 - val_loss: 13.4576 - val_opa_metric: 0.8052
+562/562 [==============================] - 15s 19ms/step - loss: 13.3336 - opa_metric: 0.8085 - val_loss: 13.3219 - val_opa_metric: 0.8048
+562/562 [==============================] - 15s 19ms/step - loss: 13.2825 - opa_metric: 0.8096 - val_loss: 13.5080 - val_opa_metric: 0.8134
+562/562 [==============================] - 14s 19ms/step - loss: 13.4627 - opa_metric: 0.8073 - val_loss: 13.6526 - val_opa_metric: 0.8039
+562/562 [==============================] - 15s 19ms/step - loss: 13.3705 - opa_metric: 0.8094 - val_loss: 13.7051 - val_opa_metric: 0.8072
+***  Wrote /home/yuhaoge2/out/tpugraphs_tiles/results_1700739686199.csv
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+model_name MLP
+model_class <class 'tpu_graphs.baselines.tiles.models.MLP'>
+562/562 [==============================] - 11s 8ms/step - loss: 15.4311 - opa_metric: 0.7159 - val_loss: 15.7529 - val_opa_metric: 0.7390
+562/562 [==============================] - 8s 8ms/step - loss: 15.2338 - opa_metric: 0.7330 - val_loss: 14.8916 - val_opa_metric: 0.7411
+562/562 [==============================] - 8s 7ms/step - loss: 15.4544 - opa_metric: 0.7337 - val_loss: 14.9772 - val_opa_metric: 0.7370
+562/562 [==============================] - 8s 8ms/step - loss: 14.9962 - opa_metric: 0.7353 - val_loss: 14.9125 - val_opa_metric: 0.7372
+562/562 [==============================] - 8s 8ms/step - loss: 14.9707 - opa_metric: 0.7370 - val_loss: 15.5783 - val_opa_metric: 0.7427
+562/562 [==============================] - 8s 8ms/step - loss: 14.8652 - opa_metric: 0.7371 - val_loss: 14.7976 - val_opa_metric: 0.7401
+562/562 [==============================] - 8s 8ms/step - loss: 14.8039 - opa_metric: 0.7381 - val_loss: 15.0207 - val_opa_metric: 0.7386
+562/562 [==============================] - 8s 8ms/step - loss: 14.8407 - opa_metric: 0.7376 - val_loss: 14.7775 - val_opa_metric: 0.7419
+562/562 [==============================] - 8s 8ms/step - loss: 15.8200 - opa_metric: 0.7398 - val_loss: 14.6149 - val_opa_metric: 0.7429
+562/562 [==============================] - 8s 7ms/step - loss: 14.9073 - opa_metric: 0.7388 - val_loss: 14.6805 - val_opa_metric: 0.7428
+562/562 [==============================] - 8s 7ms/step - loss: 14.7208 - opa_metric: 0.7400 - val_loss: 14.4358 - val_opa_metric: 0.7451
+562/562 [==============================] - 8s 8ms/step - loss: 14.7118 - opa_metric: 0.7391 - val_loss: 15.7163 - val_opa_metric: 0.7443
+562/562 [==============================] - 7s 7ms/step - loss: 15.2312 - opa_metric: 0.7396 - val_loss: 14.4789 - val_opa_metric: 0.7427
+562/562 [==============================] - 8s 8ms/step - loss: 14.6062 - opa_metric: 0.7387 - val_loss: 14.7613 - val_opa_metric: 0.7391
+562/562 [==============================] - 8s 8ms/step - loss: 14.7411 - opa_metric: 0.7386 - val_loss: 14.6901 - val_opa_metric: 0.7372
+562/562 [==============================] - 8s 8ms/step - loss: 14.5656 - opa_metric: 0.7427 - val_loss: 14.4220 - val_opa_metric: 0.7461
+562/562 [==============================] - 8s 8ms/step - loss: 14.4756 - opa_metric: 0.7387 - val_loss: 14.6641 - val_opa_metric: 0.7401
+562/562 [==============================] - 8s 8ms/step - loss: 14.4016 - opa_metric: 0.7402 - val_loss: 14.2924 - val_opa_metric: 0.7384
+562/562 [==============================] - 8s 7ms/step - loss: 14.4459 - opa_metric: 0.7404 - val_loss: 14.5088 - val_opa_metric: 0.7351
+562/562 [==============================] - 8s 8ms/step - loss: 14.4578 - opa_metric: 0.7421 - val_loss: 14.4917 - val_opa_metric: 0.7463
+562/562 [==============================] - 8s 8ms/step - loss: 14.4353 - opa_metric: 0.7410 - val_loss: 14.2884 - val_opa_metric: 0.7395
+562/562 [==============================] - 8s 8ms/step - loss: 14.4314 - opa_metric: 0.7399 - val_loss: 14.3573 - val_opa_metric: 0.7423
+562/562 [==============================] - 8s 8ms/step - loss: 14.4376 - opa_metric: 0.7421 - val_loss: 15.5388 - val_opa_metric: 0.7401
+562/562 [==============================] - 8s 8ms/step - loss: 14.5117 - opa_metric: 0.7412 - val_loss: 14.9771 - val_opa_metric: 0.7377
+562/562 [==============================] - 8s 8ms/step - loss: 14.5413 - opa_metric: 0.7402 - val_loss: 14.3801 - val_opa_metric: 0.7398
+562/562 [==============================] - 8s 8ms/step - loss: 14.7636 - opa_metric: 0.7420 - val_loss: 14.4287 - val_opa_metric: 0.7372
+562/562 [==============================] - 8s 8ms/step - loss: 14.3163 - opa_metric: 0.7427 - val_loss: 14.6591 - val_opa_metric: 0.7410
+562/562 [==============================] - 8s 8ms/step - loss: 14.3674 - opa_metric: 0.7424 - val_loss: 14.1877 - val_opa_metric: 0.7417
+562/562 [==============================] - 8s 8ms/step - loss: 14.3441 - opa_metric: 0.7434 - val_loss: 14.8972 - val_opa_metric: 0.7398
+562/562 [==============================] - 8s 8ms/step - loss: 14.2827 - opa_metric: 0.7433 - val_loss: 14.3470 - val_opa_metric: 0.7391
+562/562 [==============================] - 8s 8ms/step - loss: 14.4129 - opa_metric: 0.7439 - val_loss: 14.6771 - val_opa_metric: 0.7352
+562/562 [==============================] - 8s 8ms/step - loss: 14.7040 - opa_metric: 0.7435 - val_loss: 14.4496 - val_opa_metric: 0.7442
+562/562 [==============================] - 7s 7ms/step - loss: 14.2353 - opa_metric: 0.7425 - val_loss: 14.5571 - val_opa_metric: 0.7405
+562/562 [==============================] - 8s 7ms/step - loss: 14.3378 - opa_metric: 0.7415 - val_loss: 14.3695 - val_opa_metric: 0.7470
+562/562 [==============================] - 8s 7ms/step - loss: 14.2809 - opa_metric: 0.7416 - val_loss: 14.4926 - val_opa_metric: 0.7398
+562/562 [==============================] - 8s 8ms/step - loss: 14.2860 - opa_metric: 0.7442 - val_loss: 15.0500 - val_opa_metric: 0.7412
+562/562 [==============================] - 7s 7ms/step - loss: 14.2566 - opa_metric: 0.7451 - val_loss: 14.4268 - val_opa_metric: 0.7451
+562/562 [==============================] - 8s 7ms/step - loss: 14.3289 - opa_metric: 0.7446 - val_loss: 15.0949 - val_opa_metric: 0.7363
+562/562 [==============================] - 8s 7ms/step - loss: 14.3844 - opa_metric: 0.7443 - val_loss: 14.3555 - val_opa_metric: 0.7552
+562/562 [==============================] - 8s 8ms/step - loss: 15.4270 - opa_metric: 0.7434 - val_loss: 15.2291 - val_opa_metric: 0.7420
+562/562 [==============================] - 8s 8ms/step - loss: 14.2202 - opa_metric: 0.7433 - val_loss: 14.3170 - val_opa_metric: 0.7373
+562/562 [==============================] - 8s 8ms/step - loss: 14.2617 - opa_metric: 0.7451 - val_loss: 14.5181 - val_opa_metric: 0.7389
+562/562 [==============================] - 8s 7ms/step - loss: 14.3318 - opa_metric: 0.7463 - val_loss: 14.3537 - val_opa_metric: 0.7378
+562/562 [==============================] - 8s 8ms/step - loss: 14.2342 - opa_metric: 0.7434 - val_loss: 14.7505 - val_opa_metric: 0.7368
+562/562 [==============================] - 8s 8ms/step - loss: 14.2057 - opa_metric: 0.7452 - val_loss: 15.0703 - val_opa_metric: 0.7391
+562/562 [==============================] - 8s 8ms/step - loss: 14.2701 - opa_metric: 0.7437 - val_loss: 14.3747 - val_opa_metric: 0.7407
+562/562 [==============================] - 7s 7ms/step - loss: 14.3322 - opa_metric: 0.7468 - val_loss: 14.2342 - val_opa_metric: 0.7465
+562/562 [==============================] - 8s 8ms/step - loss: 14.2504 - opa_metric: 0.7449 - val_loss: 14.7036 - val_opa_metric: 0.7415
+562/562 [==============================] - 8s 8ms/step - loss: 14.1335 - opa_metric: 0.7443 - val_loss: 14.8947 - val_opa_metric: 0.7444
+562/562 [==============================] - 7s 8ms/step - loss: 14.1781 - opa_metric: 0.7461 - val_loss: 14.4838 - val_opa_metric: 0.7480
+562/562 [==============================] - 8s 8ms/step - loss: 14.2257 - opa_metric: 0.7449 - val_loss: 14.4482 - val_opa_metric: 0.7465
+562/562 [==============================] - 8s 7ms/step - loss: 14.1983 - opa_metric: 0.7457 - val_loss: 14.3299 - val_opa_metric: 0.7445
+562/562 [==============================] - 8s 8ms/step - loss: 14.1291 - opa_metric: 0.7456 - val_loss: 14.3472 - val_opa_metric: 0.7484
+562/562 [==============================] - 8s 7ms/step - loss: 14.3468 - opa_metric: 0.7460 - val_loss: 14.2045 - val_opa_metric: 0.7442
+562/562 [==============================] - 8s 8ms/step - loss: 14.1617 - opa_metric: 0.7467 - val_loss: 14.7485 - val_opa_metric: 0.7390
+562/562 [==============================] - 8s 8ms/step - loss: 14.0970 - opa_metric: 0.7482 - val_loss: 14.4255 - val_opa_metric: 0.7494
+562/562 [==============================] - 8s 8ms/step - loss: 14.1111 - opa_metric: 0.7485 - val_loss: 14.5811 - val_opa_metric: 0.7457
+562/562 [==============================] - 7s 7ms/step - loss: 14.1842 - opa_metric: 0.7440 - val_loss: 14.3511 - val_opa_metric: 0.7420
+562/562 [==============================] - 8s 8ms/step - loss: 14.1491 - opa_metric: 0.7463 - val_loss: 14.3884 - val_opa_metric: 0.7397
+***  Wrote /home/yuhaoge2/out/tpugraphs_tiles/results_1700741236976.csv
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/xla/027fa03fc80419f183ffebabc0dc0bfa-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/xla/027fa03fc80419f183ffebabc0dc0bfa-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/xla/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/xla/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/xla/f49ccbd77dd342efcacfac025d19814e-cache.npz
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/xla/f49ccbd77dd342efcacfac025d19814e-cache.npz

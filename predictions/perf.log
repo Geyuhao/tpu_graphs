@@ -1,0 +1,46 @@
+{
+  "filename": "EarlyJoinResGCN_model_7eca281edb52d5b161573264426dfac8.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.033448874950408936,
+  "inception_v3_batch_128_train": 0.033276330679655075,
+  "resnet_v1_50_official_batch_128_bf16": 0.0698302835226059,
+  "mlperf_bert_batch_24_2x2": 0.0656852051615715,
+  "resnet50.4x4.fp16": 0.06759151071310043,
+  "bert_pretraining.4x4.fp16": 0.027345797047019005,
+  "unet_3d.4x4.bf16": 0.07707029581069946
+}{
+  "filename": "EarlyJoinSAGE_model_cafb90fcc7cf26b1f45911a410c75168.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.0159151591360569,
+  "inception_v3_batch_128_train": 0.02438836172223091,
+  "resnet_v1_50_official_batch_128_bf16": 0.04075794667005539,
+  "mlperf_bert_batch_24_2x2": 0.06698578596115112,
+  "resnet50.4x4.fp16": 0.06209626421332359,
+  "bert_pretraining.4x4.fp16": 0.021764790639281273,
+  "unet_3d.4x4.bf16": 0.35344260931015015
+}{
+  "filename": "LateJoinResGCN_model_3e20c8dd3a1edad3476324a0182470d9.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.06124764308333397,
+  "inception_v3_batch_128_train": 0.030972206965088844,
+  "resnet_v1_50_official_batch_128_bf16": 0.1310638040304184,
+  "mlperf_bert_batch_24_2x2": 0.10153929144144058,
+  "resnet50.4x4.fp16": 0.08150897920131683,
+  "bert_pretraining.4x4.fp16": 0.03574100509285927,
+  "unet_3d.4x4.bf16": 0.23881849646568298
+}{
+  "filename": "MLP_model_08ddbb54c03116a1ef17265db2358d39.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.2220507115125656,
+  "inception_v3_batch_128_train": 1.0944479703903198,
+  "resnet_v1_50_official_batch_128_bf16": 0.5930031538009644,
+  "mlperf_bert_batch_24_2x2": 0.33455729484558105,
+  "resnet50.4x4.fp16": 0.6382068395614624,
+  "bert_pretraining.4x4.fp16": 0.2972167134284973,
+  "unet_3d.4x4.bf16": 0.4540465474128723
+}{
+  "filename": "LateJoinSAGE_model_c18b6d0bdf18980c3f995d433a9b4f61.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.06315246224403381,
+  "inception_v3_batch_128_train": 0.035996004939079285,
+  "resnet_v1_50_official_batch_128_bf16": 0.10745947808027267,
+  "mlperf_bert_batch_24_2x2": 0.09356208890676498,
+  "resnet50.4x4.fp16": 0.07842041552066803,
+  "bert_pretraining.4x4.fp16": 0.027873607352375984,
+  "unet_3d.4x4.bf16": 0.021565858274698257
+}

@@ -25,13 +25,14 @@ The high-level models are:
 [GCN] Kipf and Welling, ICLR'17.
 [GraphSAGE] Hamilton et al, NeurIPS'17.
 """
-import abc
+import abc, tqdm, os
+import numpy as np
 
 import tensorflow as tf
 import tensorflow_gnn as tfgnn
 
 from tpu_graphs.baselines.tiles import implicit
-
+from sklearn.linear_model import LinearRegression
 
 class _ConfigFeatureJoiner(abc.ABC):
   """Defines interface for joining config features with op nodes.
@@ -301,3 +302,52 @@ class MLP(tf.keras.Model):
     op_feats = tf.stack([op_feats] * num_configs, 1)
     op_feats = tf.concat([op_feats, config_feats], -1)
     return tf.squeeze(self._mlp(op_feats), -1)
+
+
+
+class LinearRegressor(tf.keras.Model):
+    """Linear regression model for GraphTensor data."""
+
+    def __init__(self, train_ds: tf.data.Dataset):
+      super().__init__()
+      self.regression = LinearRegression()
+      self.train(train_ds)
+
+    def load_data(self, files):
+      X, y = [], []
+
+      for filename in files:
+        # print(np.load(filename, allow_pickle=True)['config_feat'])
+        unnormalised_runtime = np.load(filename, allow_pickle=True)['config_runtime']
+        runtime_normalisers = np.load(filename, allow_pickle=True)['config_runtime_normalizers']
+        runtimes = unnormalised_runtime / runtime_normalisers
+
+        output_bounds_sums = np.load(filename, allow_pickle=True)['config_feat']#[:, IDX]
+
+        X.extend(output_bounds_sums)
+        y.extend(runtimes)
+
+      return np.array(X), np.array(y).reshape(-1, 1)
+
+
+    def train(self, train_dir):
+      train_files = [train_dir + f for f in os.listdir(train_dir)]
+
+      X, y = self.load_data(train_files)
+      print('X shape', X.shape)
+      self.regression.fit(X, y)
+      print("training finished")
+
+    def call(self, graph: tfgnn.GraphTensor, training: bool = False):
+      del training
+      return self.forward(graph, self._num_configs)
+
+    def forward(self, graph: tfgnn.GraphTensor, num_configs: int):
+      # Extracting features as done in the MLP model
+      # You may need to adjust this part based on how your graph's features are structured
+
+      config_feat=graph.node_sets['config']['feats']
+      
+      pred_time = self.regression.predict(config_feat)
+      return pred_time
+

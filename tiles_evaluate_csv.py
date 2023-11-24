@@ -7,9 +7,9 @@ from absl import flags, app
 
 def main(unused_argv: list[str]):
 
-    f = open("./predictions/perf.log", "w")
+    f_out = open("./predictions/perf.log", "w")
 
-    dirpaths = [os.path.join("./predictions", f) for f in os.listdir("./predictions")]
+    dirpaths = [os.path.join("./predictions", f) for f in os.listdir("./predictions") if f.endswith('.csv')]
 
     for result_path in dirpaths:
         dict = {}
@@ -48,11 +48,15 @@ def main(unused_argv: list[str]):
             error = float((best_of_candidates - time_best) / time_best)
             errors_by_benchmark[benchmark].append(error)
             errors.append(error)
-
-        print(json.dumps({k2: float(tf.reduce_mean(v2).numpy()) for k2, v2 in errors_by_benchmark.items()},indent=2, sort_keys=True))
-        f.write(json.dumps({k2: float(tf.reduce_mean(v2).numpy()) for k2, v2 in errors_by_benchmark.items()},indent=2, sort_keys=True))
+            
+        filename = os.path.basename(result_path)
+        errors_data = {k2: float(tf.reduce_mean(v2).numpy()) for k2, v2 in errors_by_benchmark.items()}
+        output_data = {'filename': filename}
+        output_data.update(errors_data)
+        print(json.dumps(output_data, indent=2))
+        f_out.write(json.dumps(output_data, indent=2))
         
-    f.close()
+    f_out.close()
             
 
 

@@ -54,7 +54,6 @@ def main(unused_argv: list[str]) -> None:
   
   for dirpath in dirpaths:
   # dirpath = dirpaths[0]
-
     # Load keras model.
     with tf.keras.saving.custom_object_scope(
         # Model was compiled with a loss before it was saved.
@@ -90,9 +89,35 @@ def main(unused_argv: list[str]) -> None:
     module_ids, ranks = train_lib.rank_config_indices(ds, model.forward, top_ranks=5)
 
     os.makedirs('predictions', exist_ok=True)
-    
-    train_lib.write_least_runtimes_csv(f'predictions/{model_name}_predictions_model_output.csv', module_ids, ranks)
+    model_path = os.path.basename(dirpath)
+
+    train_lib.write_least_runtimes_csv(f'predictions/{model_name}_{model_path}.csv', module_ids, ranks)
+
+
+
+def regression_main(unused_argv: list[str]) -> None:
+  dataset = data.get_npz_dataset(
+      os.path.expanduser(train_lib._DATA_ROOT.value),
+      cache_dir=os.path.expanduser(train_lib._CACHE_DIR.value))
+  
+  model_name = "LinearRegressor"
+  model_class = getattr(models, model_name)
+  
+  BASE_DIR = '/home/yuhaoge2/data/tpugraphs/npz/tile/xla/'
+  TRAIN_DIR = BASE_DIR + 'train/'
+  
+  model = model_class(TRAIN_DIR)
+  
+  ds = dataset.validation.get_graph_tensors_dataset()
+  print(ds)
+  exit()
+  module_ids, ranks = train_lib.rank_config_indices(ds, model.forward, top_ranks=5)
+
+  os.makedirs('predictions', exist_ok=True)
+  train_lib.write_least_runtimes_csv(f'predictions/{model_name}_predictions_model_output.csv', module_ids, ranks)
+
 
 
 if __name__ == '__main__':
-  app.run(main)
+  # app.run(main)
+  app.run(regression_main)

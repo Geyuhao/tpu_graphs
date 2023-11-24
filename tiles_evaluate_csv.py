@@ -5,13 +5,18 @@ import os, tqdm, collections, json
 import tensorflow as tf
 from absl import flags, app
 
+_MODEL_NAME = flags.DEFINE_string(
+    'name', None, 'Model name ', required=True,)
+
 def main(unused_argv: list[str]):
 
-    f_out = open("./predictions/perf.log", "w")
+    f_out = open("./predictions/perf.log", "a")
 
     dirpaths = [os.path.join("./predictions", f) for f in os.listdir("./predictions") if f.endswith('.csv')]
 
     for result_path in dirpaths:
+        if _MODEL_NAME.value is not None and _MODEL_NAME.value not in result_path:
+            continue
         dict = {}
 
         with open(result_path, "r") as f:

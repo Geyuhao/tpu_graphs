@@ -329,12 +329,17 @@ class LinearRegressor(tf.keras.Model):
 
       return np.array(X), np.array(y).reshape(-1, 1)
 
+    def train(self, train_ds):
+      X = []
+      y = []
+      for graph in tqdm.tqdm(train_ds):
+          runtimes = graph.node_sets['config']['runtimes']
+          config_feat=graph.node_sets['config']['feats']
+          X.append(config_feat.numpy())
+          y.append(runtimes.numpy())
+      X = np.concatenate(X)
+      y = np.concatenate(y)
 
-    def train(self, train_dir):
-      train_files = [train_dir + f for f in os.listdir(train_dir)]
-
-      X, y = self.load_data(train_files)
-      print('X shape', X.shape)
       self.regression.fit(X, y)
       print("training finished")
 
@@ -347,7 +352,6 @@ class LinearRegressor(tf.keras.Model):
       # You may need to adjust this part based on how your graph's features are structured
 
       config_feat=graph.node_sets['config']['feats']
-      
       pred_time = self.regression.predict(config_feat)
-      return pred_time
+      return tf.reshape(pred_time, (1, -1))
 

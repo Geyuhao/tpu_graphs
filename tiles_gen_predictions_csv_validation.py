@@ -103,14 +103,9 @@ def regression_main(unused_argv: list[str]) -> None:
   model_name = "LinearRegressor"
   model_class = getattr(models, model_name)
   
-  BASE_DIR = '/home/yuhaoge2/data/tpugraphs/npz/tile/xla/'
-  TRAIN_DIR = BASE_DIR + 'train/'
-  
-  model = model_class(TRAIN_DIR)
-  
+  train_ds = dataset.train.get_graph_tensors_dataset()
+  model = model_class(train_ds)
   ds = dataset.validation.get_graph_tensors_dataset()
-  print(ds)
-  exit()
   module_ids, ranks = train_lib.rank_config_indices(ds, model.forward, top_ranks=5)
 
   os.makedirs('predictions', exist_ok=True)

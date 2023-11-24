@@ -43,4 +43,13 @@
   "resnet50.4x4.fp16": 0.07842041552066803,
   "bert_pretraining.4x4.fp16": 0.027873607352375984,
   "unet_3d.4x4.bf16": 0.021565858274698257
+}{
+  "filename": "LinearRegressor_predictions_model_output.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.23333045840263367,
+  "inception_v3_batch_128_train": 0.5888732075691223,
+  "resnet_v1_50_official_batch_128_bf16": 0.5797675251960754,
+  "mlperf_bert_batch_24_2x2": 0.1630951315164566,
+  "resnet50.4x4.fp16": 0.41878458857536316,
+  "bert_pretraining.4x4.fp16": 0.2449808120727539,
+  "unet_3d.4x4.bf16": 0.8871104121208191
 }

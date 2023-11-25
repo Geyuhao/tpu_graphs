@@ -56,6 +56,8 @@ def main(unused_argv: list[str]):
             
         filename = os.path.basename(result_path)
         errors_data = {k2: float(tf.reduce_mean(v2).numpy()) for k2, v2 in errors_by_benchmark.items()}
+        average_error = float(tf.reduce_mean(errors).numpy())
+        errors_data['average'] = average_error
         output_data = {'filename': filename}
         output_data.update(errors_data)
         print(json.dumps(output_data, indent=2))

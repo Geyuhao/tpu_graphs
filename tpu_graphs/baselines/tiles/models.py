@@ -25,14 +25,19 @@ The high-level models are:
 [GCN] Kipf and Welling, ICLR'17.
 [GraphSAGE] Hamilton et al, NeurIPS'17.
 """
-import abc, tqdm, os
+import abc, tqdm
 import numpy as np
+
+import xgboost as xgb
 
 import tensorflow as tf
 import tensorflow_gnn as tfgnn
 
 from tpu_graphs.baselines.tiles import implicit
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import GridSearchCV
+
 
 class _ConfigFeatureJoiner(abc.ABC):
   """Defines interface for joining config features with op nodes.
@@ -310,24 +315,22 @@ class LinearRegressor(tf.keras.Model):
 
     def __init__(self, train_ds: tf.data.Dataset):
       super().__init__()
-      self.regression = LinearRegression()
+      # self.regressor = LinearRegression()
+      # self.regressor = RandomForestRegressor(n_jobs=-1, verbose=2)
+
+      self.param_grid = {
+          'n_estimators': [100, 200, 300],
+          'learning_rate': [0.01, 0.1, 0.2],
+          'max_depth': [3, 4, 5],
+          # Add more parameters here
+      }
+      
+      self.regressor = xgb.XGBRegressor(objective='rank:pairwise', n_jobs=48)
+                                        # n_estimators=100,
+                                        # learning_rate=0.01,
+                                        # )
+      self.best_regressor = None
       self.train(train_ds)
-
-    def load_data(self, files):
-      X, y = [], []
-
-      for filename in files:
-        # print(np.load(filename, allow_pickle=True)['config_feat'])
-        unnormalised_runtime = np.load(filename, allow_pickle=True)['config_runtime']
-        runtime_normalisers = np.load(filename, allow_pickle=True)['config_runtime_normalizers']
-        runtimes = unnormalised_runtime / runtime_normalisers
-
-        output_bounds_sums = np.load(filename, allow_pickle=True)['config_feat']#[:, IDX]
-
-        X.extend(output_bounds_sums)
-        y.extend(runtimes)
-
-      return np.array(X), np.array(y).reshape(-1, 1)
 
     def train(self, train_ds):
       X = []
@@ -340,8 +343,22 @@ class LinearRegressor(tf.keras.Model):
       X = np.concatenate(X)
       y = np.concatenate(y)
 
-      self.regression.fit(X, y)
+      # self.regressor.fit(X, y)
       print("training finished")
+      
+      grid_search = GridSearchCV(
+          estimator=self.regressor,
+          param_grid=self.param_grid,
+          cv=3,  # Number of cross-validation folds
+          scoring='neg_mean_squared_error',  # Define your scoring metric
+          verbose=2
+      )
+
+      grid_search.fit(X, y)
+      self.best_regressor = grid_search.best_estimator_  # The best model
+
+      print("Best parameters found: ", grid_search.best_params_)
+      print("Best score: ", grid_search.best_score_)
 
     def call(self, graph: tfgnn.GraphTensor, training: bool = False):
       del training
@@ -352,6 +369,7 @@ class LinearRegressor(tf.keras.Model):
       # You may need to adjust this part based on how your graph's features are structured
 
       config_feat=graph.node_sets['config']['feats']
-      pred_time = self.regression.predict(config_feat)
+      # pred_time = self.regressor.predict(config_feat)
+      pred_time = self.best_regressor.predict(config_feat)
       return tf.reshape(pred_time, (1, -1))
 

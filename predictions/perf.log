@@ -16,6 +16,7 @@
   "resnet50.4x4.fp16": 0.06209626421332359,
   "bert_pretraining.4x4.fp16": 0.021764790639281273,
   "unet_3d.4x4.bf16": 0.35344260931015015
+  "average": 0.08362155966460705
 }{
   "filename": "LateJoinResGCN_model_3e20c8dd3a1edad3476324a0182470d9.csv",
   "tf2_bert_pretrain_dynamic_batch_size": 0.06124764308333397,
@@ -52,4 +53,55 @@
   "resnet50.4x4.fp16": 0.41878458857536316,
   "bert_pretraining.4x4.fp16": 0.2449808120727539,
   "unet_3d.4x4.bf16": 0.8871104121208191
+  "average": 0.4451
+}{
+  "filename": "LinearRegressor_predictions_model_output.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.01763363555073738,
+  "inception_v3_batch_128_train": 0.30429375171661377,
+  "resnet_v1_50_official_batch_128_bf16": 0.022884782403707504,
+  "mlperf_bert_batch_24_2x2": 0.0903773382306099,
+  "resnet50.4x4.fp16": 0.03659993037581444,
+  "bert_pretraining.4x4.fp16": 0.01210018154233694,
+  "unet_3d.4x4.bf16": 0.40310874581336975,
+  "average": 0.14662708342075348
+}{
+  "filename": "LinearRegressor_predictions_model_output.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.11304931342601776,
+  "inception_v3_batch_128_train": 0.1131451427936554,
+  "resnet_v1_50_official_batch_128_bf16": 0.05751454830169678,
+  "mlperf_bert_batch_24_2x2": 0.12146327644586563,
+  "resnet50.4x4.fp16": 0.06970973312854767,
+  "bert_pretraining.4x4.fp16": 0.05325743928551674,
+  "unet_3d.4x4.bf16": 5.820457458496094,
+  "average": 0.17802025377750397
+}{
+  "filename": "LinearRegressor_predictions_model_output.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.0969834178686142,
+  "inception_v3_batch_128_train": 0.05627466365695,
+  "resnet_v1_50_official_batch_128_bf16": 0.14590050280094147,
+  "mlperf_bert_batch_24_2x2": 0.11208868771791458,
+  "resnet50.4x4.fp16": 0.1603395938873291,
+  "bert_pretraining.4x4.fp16": 0.039611220359802246,
+  "unet_3d.4x4.bf16": 0.32225722074508667,
+  "average": 0.09880947321653366
+}{
+  "filename": "LinearRegressor_predictions_model_output.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.1001138910651207,
+  "inception_v3_batch_128_train": 0.06403599679470062,
+  "resnet_v1_50_official_batch_128_bf16": 0.1988583505153656,
+  "mlperf_bert_batch_24_2x2": 0.15694306790828705,
+  "resnet50.4x4.fp16": 0.21294599771499634,
+  "bert_pretraining.4x4.fp16": 0.0690384954214096,
+  "unet_3d.4x4.bf16": 0.4624935984611511,
+  "average": 0.128083273768425
+}{
+  "filename": "LinearRegressor_predictions_model_output.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.09519926458597183,
+  "inception_v3_batch_128_train": 0.06112627685070038,
+  "resnet_v1_50_official_batch_128_bf16": 0.17460501194000244,
+  "mlperf_bert_batch_24_2x2": 0.1872892677783966,
+  "resnet50.4x4.fp16": 0.17898255586624146,
+  "bert_pretraining.4x4.fp16": 0.05649712309241295,
+  "unet_3d.4x4.bf16": 0.28723329305648804,
+  "average": 0.11719630658626556
 }

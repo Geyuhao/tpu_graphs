@@ -203,6 +203,8 @@ class NpzDatasetPartition:
   def load_from_file(self, cache_file: str):
     """Loads dataset from numpy file."""
     np_dict = np.load(tf.io.gfile.GFile(cache_file, 'rb'))
+    for key in np_dict.files:
+      print(key, np_dict[key].shape)
     self.node_feat = tf.constant(np_dict['node_feat'])
     self.node_opcode = tf.constant(np_dict['node_opcode'])
     self.edge_index = tf.constant(np_dict['edge_index'])
@@ -215,6 +217,7 @@ class NpzDatasetPartition:
     self.config_ranges = tf.constant(np_dict['config_ranges'])
     tile_ids = tf.io.gfile.GFile(cache_file + '.tiles.txt', 'r').readlines()
     self.tile_id = tf.stack([tile_id.rstrip() for tile_id in tile_ids])
+    print("tile_id", self.tile_id.shape)
     print('loaded from ' + cache_file)
 
   def add_npz_file(

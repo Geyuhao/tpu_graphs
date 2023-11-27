@@ -53,6 +53,8 @@ def main(unused_argv: list[str]) -> None:
   #   return
   
   for dirpath in dirpaths:
+    if "ac23" not in dirpath:
+      continue
   # dirpath = dirpaths[0]
     # Load keras model.
     with tf.keras.saving.custom_object_scope(
@@ -114,5 +116,5 @@ def regression_main(unused_argv: list[str]) -> None:
 
 
 if __name__ == '__main__':
-  # app.run(main)
-  app.run(regression_main)
+  app.run(main)
+  # app.run(regression_main)

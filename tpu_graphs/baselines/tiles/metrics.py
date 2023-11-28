@@ -71,6 +71,7 @@ LOSS_DICT = {
     'ListMLELoss': tfr.keras.losses.ListMLELoss(temperature=10),
     'PairwiseHingeLoss': tfr.keras.losses.PairwiseHingeLoss(temperature=10),
     'MSE': tf.keras.losses.MeanSquaredError(),
+    'PairwiseLogisticLoss': tfr.keras.losses.PairwiseLogisticLoss(temperature=10),
 }
 
 

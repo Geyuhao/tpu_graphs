@@ -192,7 +192,7 @@ def train(args: train_args.TrainArgs):
 def rank_config_indices(
     test_ds: tf.data.Dataset,
     model_fn: Callable[[tfgnn.GraphTensor, int], tf.Tensor],
-    top_ranks=10
+    top_ranks=5
     ) -> tuple[tf.Tensor, tf.Tensor]:
   """Module IDs and config indices that `model_fn` assigns lowest scores.
 

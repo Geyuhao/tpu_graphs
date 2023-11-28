@@ -46,15 +46,13 @@ def main(unused_argv: list[str]) -> None:
 
   # dirpaths = _MODEL_DIRS.value.split(',')
   dirpath = _MODEL_DIRS.value
-  dirpaths = [os.path.join(dirpath, f) for f in os.listdir(dirpath) if f.startswith('model_')]
+  dirpaths = [os.path.join(dirpath, f) for f in os.listdir(dirpath) if f.startswith('model_') and "033bd3e" in f]
 
   # if len(dirpaths) != 1:
   #   print("Please provide exactly 1 model directory in --dirs.")
   #   return
   
   for dirpath in dirpaths:
-    if "ac23" not in dirpath:
-      continue
   # dirpath = dirpaths[0]
     # Load keras model.
     with tf.keras.saving.custom_object_scope(

@@ -107,7 +107,29 @@ class ResidualGNNLayer(tf.keras.layers.Layer):
         return x_projected + y
 
 
-class _SAGE(tf.keras.Model, _ConfigFeatureJoiner):
+class AttentionLayer(tf.keras.layers.Layer):
+    def __init__(self, units):
+        super(AttentionLayer, self).__init__()
+        self.units = units
+        self.query_dense = tf.keras.layers.Dense(units)
+        self.key_dense = tf.keras.layers.Dense(units)
+        self.value_dense = tf.keras.layers.Dense(units)
+        self.softmax = tf.keras.layers.Softmax(axis=-1)
+
+    def call(self, inputs):
+        query = self.query_dense(inputs)
+        key = self.key_dense(inputs)
+        value = self.value_dense(inputs)
+
+        scores = tf.matmul(query, key, transpose_b=True)
+        scores = scores / tf.math.sqrt(tf.cast(self.units, tf.float32))
+        weights = self.softmax(scores)
+        
+        attention_output = tf.matmul(weights, value)
+        return attention_output
+
+
+class _NEWSAGE(tf.keras.Model, _ConfigFeatureJoiner):
   """Implements GraphSAGE GNN Backbone."""
 
   def __init__(self, num_configs: int, num_ops: int,
@@ -134,7 +156,7 @@ class _SAGE(tf.keras.Model, _ConfigFeatureJoiner):
     graph = self._op_embedding(graph)
     x = self.get_op_node_features(graph, num_configs)
 
-    tf.print("x shape before is", tf.shape(x))
+    # tf.print("x shape before is", tf.shape(x))
 
     bidirectional_adj = implicit.AdjacencyMultiplier(graph, 'feed')
     bidirectional_adj = implicit.Sum(
@@ -152,12 +174,87 @@ class _SAGE(tf.keras.Model, _ConfigFeatureJoiner):
       x = gnn_layer(x, bidirectional_adj)
       x = tf.nn.l2_normalize(x, axis=-1)
 
-    tf.print("x shape after is", tf.shape(x))  
+    # tf.print("x shape after is", tf.shape(x))  
 
     pooled = tfgnn.pool_nodes_to_context(graph, 'op', 'sum', feature_value=x)
-    tf.print("pooled shape is", tf.shape(pooled))
+    # tf.print("pooled shape is", tf.shape(pooled))
 
     pooled = self.get_penultimate_output(pooled, graph, num_configs)
+    # Pooled has shape [batch_size, num_configs, hidden_dim]
+    # _postnet maps across last channel from hidden_dim to 1.
+    return tf.squeeze(self._postnet(pooled), -1)
+
+
+class _SAGE(tf.keras.Model, _ConfigFeatureJoiner):
+  """Implements GraphSAGE GNN Backbone."""
+  def __init__(self, num_configs: int, num_ops: int,
+               num_gnns: int = 3, final_mlp_layers: int = 3,
+               hidden_activation: str = 'leaky_relu', hidden_dim: int = 1024,
+               op_embed_dim: int = 256):
+    super().__init__()
+    self._num_configs = num_configs
+    self._op_embedding = _OpEmbedding(num_ops, op_embed_dim)
+    self._gnn_layers = []
+    for unused_i in range(num_gnns):
+      self._gnn_layers.append(_mlp([hidden_dim], hidden_activation, use_bias=False))
+    self._postnet = _mlp(
+        [hidden_dim] * final_mlp_layers + [1], hidden_activation, use_bias=False)
+    self._activation_fn = getattr(tf.nn, hidden_activation)
+    self.dropout = tf.keras.layers.Dropout(0.1)
+
+  def call(self, graph: tfgnn.GraphTensor, training: bool = False):
+    return self.forward(graph, self._num_configs, training=training)
+  
+  def forward(
+      self, graph: tfgnn.GraphTensor, num_configs: int, training: bool = False) -> tfgnn.GraphTensor:
+    graph = self._op_embedding(graph)
+    x = self.get_op_node_features(graph, num_configs)
+              
+    # bidirectional_adj = implicit.AdjacencyMultiplier(graph, 'feed')
+    # bidirectional_adj = implicit.Sum(
+    #     bidirectional_adj, bidirectional_adj.transpose())
+    
+    # for gnn_layer in self._gnn_layers:
+    #   y = bidirectional_adj @ x
+    #   y = tf.concat([y, x], axis=-1)
+    #   y = gnn_layer(y)
+    #   y = self._activation_fn(y)
+      
+    #   y = self.dropout(y, training=training) 
+
+    #   y = tf.nn.l2_normalize(y, axis=-1)
+    #   x = y
+      
+    for gnn_layer in self._gnn_layers:
+      # gather neighbor features
+      neighbor_features = tfgnn.broadcast_node_to_edges(
+        graph, 'feed', tfgnn.SOURCE, feature_value=x)
+      
+      # compute the mean of neighbor features
+      mean_neighbor_features = tfgnn.pool_nodes_to_edges(
+        graph, 'feed', tfgnn.TARGET, 'mean', feature_value=neighbor_features)
+
+      # combine the original features with the aggregated features
+      y = tf.concat([x, mean_neighbor_features], axis=-1)
+      
+      y = gnn_layer(y)
+      y = self._activation_fn(y)
+      y = self.dropout(y, training=training)
+      y = tf.nn.l2_normalize(y, axis=-1)
+      x = y
+      
+      
+    # pooled = tfgnn.pool_nodes_to_context(graph, 'op', 'sum', feature_value=x)
+    
+    # TODO GraphSAGE aggregator mean should be used 
+    # TODO 3 Node final layers is the number of feedforward layers applied to node embeddings before reduction.
+    
+    pooled_mean = tfgnn.pool_nodes_to_context(graph, 'op', 'mean', feature_value=x)
+    pooled_max = tfgnn.pool_nodes_to_context(graph, 'op', 'max', feature_value=x)
+    pooled_concat = tf.concat([pooled_mean, pooled_max], axis=-1)
+    
+    
+    pooled = self.get_penultimate_output(pooled_concat, graph, num_configs)
     # Pooled has shape [batch_size, num_configs, hidden_dim]
     # _postnet maps across last channel from hidden_dim to 1.
     return tf.squeeze(self._postnet(pooled), -1)
@@ -178,6 +275,9 @@ class _ResGCN(tf.keras.Model, _ConfigFeatureJoiner):
     self._gc_layers = []
     self._activation_fn = getattr(tf.nn, hidden_activation)
     self._directed = directed
+    
+    # self.attention_layer = AttentionLayer(64)
+
     self._reduction = reduction
     self._prenet = _mlp([hidden_dim, hidden_dim], self._activation_fn)
     self._postnet = _mlp([hidden_dim, 1], self._activation_fn)
@@ -212,6 +312,9 @@ class _ResGCN(tf.keras.Model, _ConfigFeatureJoiner):
              + self_layer(y))
       else:
         y = forward_layer((am @ y) + (am.transpose() @ y)  + y)
+        
+        # y_attention = self.attention_layer(y)
+        # y = y + y_attention
 
       # Residual connection.
       x += y
@@ -285,91 +388,8 @@ class _LateJoin(_ConfigFeatureJoiner):
 
 
 
-class _CombinedGNNModel(tf.keras.Model, _ConfigFeatureJoiner):
-    """Combined Graph Neural Network Model integrating features of _SAGE and _ResGCN."""
-    def __init__(self, num_configs: int, num_ops: int, num_gnns: int = 3,
-                 mlp_layers: int = 2, hidden_activation: str = 'leaky_relu',
-                 hidden_dim: int = 64, op_embed_dim: int = 64,
-                 directed: bool = False, reduction: str = 'sum'):
-        super().__init__()
-        self._num_configs = num_configs
-        self._op_embedding = _OpEmbedding(num_ops, op_embed_dim)
-        self._activation_fn = getattr(tf.nn, hidden_activation)
-        self._directed = directed
-        self._reduction = reduction
 
-        # Shared MLP for both models
-        self._shared_mlp = _mlp([hidden_dim] * mlp_layers, self._activation_fn)
-
-        # GNN layers from _SAGE
-        self._gnn_layers = []
-        for _ in range(num_gnns):
-            self._gnn_layers.append(_mlp([hidden_dim], hidden_activation))
-
-        # GC layers from _ResGCN
-        self._gc_layers = []
-        for _ in range(num_gnns):
-            if directed:
-                configs_mlps = (self._shared_mlp, self._shared_mlp, self._shared_mlp)
-            else:
-                configs_mlps = (self._shared_mlp,)
-            self._gc_layers.append(tuple(configs_mlps))
-
-        # Combining post-nets from both models
-        self._postnet = _mlp([hidden_dim, hidden_dim, 1], self._activation_fn)
-
-    def call(self, graph: tfgnn.GraphTensor, training: bool = False):
-        graph = self._op_embedding(graph)
-        x = self.get_op_node_features(graph, self._num_configs)
-
-        # Apply _SAGE GNN layers
-        for gnn_layer in self._gnn_layers:
-            x = gnn_layer(x)
-
-        # Apply _ResGCN GC layers with residual connections
-        am = implicit.AdjacencyMultiplier(graph, 'feed').add_eye().normalize_right()
-        for gc_layer in self._gc_layers:
-            y = self._activation_fn(x)
-            forward_layer = gc_layer[0]
-            if self._directed:
-                reverse_layer = gc_layer[1]
-                self_layer = gc_layer[2]
-                y = (forward_layer(am @ y) + reverse_layer(am.transpose() @ y) + self_layer(y))
-            else:
-                y = forward_layer((am @ y) + (am.transpose() @ y) + y)
-            x += y  # Residual connection
-
-        x = self._activation_fn(x)
-        pooled = tfgnn.pool_nodes_to_context(graph, 'op', self._reduction, feature_value=x)
-        
-        return tf.squeeze(self._postnet(pooled), -1)
-    def forward(self, graph: tfgnn.GraphTensor, num_configs):
-        graph = self._op_embedding(graph)
-        x = self.get_op_node_features(graph, num_configs)
-
-        # Apply _SAGE GNN layers
-        for gnn_layer in self._gnn_layers:
-            x = gnn_layer(x)
-
-        # Apply _ResGCN GC layers with residual connections
-        am = implicit.AdjacencyMultiplier(graph, 'feed').add_eye().normalize_right()
-        for gc_layer in self._gc_layers:
-            y = self._activation_fn(x)
-            forward_layer = gc_layer[0]
-            if self._directed:
-                reverse_layer = gc_layer[1]
-                self_layer = gc_layer[2]
-                y = (forward_layer(am @ y) + reverse_layer(am.transpose() @ y) + self_layer(y))
-            else:
-                y = forward_layer((am @ y) + (am.transpose() @ y) + y)
-            x += y  # Residual connection
-
-        x = self._activation_fn(x)
-        pooled = tfgnn.pool_nodes_to_context(graph, 'op', self._reduction, feature_value=x)
-        
-        return tf.squeeze(self._postnet(pooled), -1)
-
-class EarlyJoinCombinedGNNModel(_EarlyJoin, _CombinedGNNModel):
+class EarlyJoinNEWSAGE(_EarlyJoin, _NEWSAGE):
   pass
 
 
@@ -477,7 +497,6 @@ class MLP(tf.keras.Model):
     op_feats = tf.stack([op_feats] * num_configs, 1)
     op_feats = tf.concat([op_feats, config_feats], -1)
     return tf.squeeze(self._mlp(op_feats), -1)
-
 
 
 class LinearRegressor(tf.keras.Model):

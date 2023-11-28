@@ -66,23 +66,53 @@
   "unet_3d.4x4.bf16": 0.07028935104608536,
   "average": 0.039942361414432526
 }{
-  "filename": "EarlyJoinCombinedGNNModel_model_ac2397579db8129b4e47b37a9856435b.csv",
-  "tf2_bert_pretrain_dynamic_batch_size": 0.059643108397722244,
-  "inception_v3_batch_128_train": 0.025187039747834206,
-  "resnet_v1_50_official_batch_128_bf16": 0.07758593559265137,
-  "mlperf_bert_batch_24_2x2": 0.10118531435728073,
-  "resnet50.4x4.fp16": 0.0683431550860405,
-  "bert_pretraining.4x4.fp16": 0.040275685489177704,
-  "unet_3d.4x4.bf16": 0.3610469698905945,
-  "average": 0.05784230679273605
+  "filename": "EarlyJoinNEWSAGE_model_01f12ef23ed9bb30902d9624fe606113.csv",  python tiles_train.py --model=EarlyJoinNEWSAGE --epochs 200 --configs 10 --batch 40 --losses PairwiseHingeLoss:0.5,ListMLELoss:0.5
+  "tf2_bert_pretrain_dynamic_batch_size": 0.022529421374201775,
+  "inception_v3_batch_128_train": 0.027049127966165543,
+  "resnet_v1_50_official_batch_128_bf16": 0.062393561005592346,
+  "mlperf_bert_batch_24_2x2": 0.04356245696544647,
+  "resnet50.4x4.fp16": 0.0480574369430542,
+  "bert_pretraining.4x4.fp16": 0.01997908018529415,
+  "unet_3d.4x4.bf16": 0.03361176699399948,
+  "average": 0.03683917596936226
 }{
-  "filename": "EarlyJoinCombinedGNNModel_model_ac2397579db8129b4e47b37a9856435b.csv",
-  "tf2_bert_pretrain_dynamic_batch_size": 0.034585773944854736,
-  "inception_v3_batch_128_train": 0.034346867352724075,
-  "resnet_v1_50_official_batch_128_bf16": 0.08794703334569931,
-  "mlperf_bert_batch_24_2x2": 0.06858167797327042,
-  "resnet50.4x4.fp16": 0.07397262752056122,
-  "bert_pretraining.4x4.fp16": 0.032014377415180206,
-  "unet_3d.4x4.bf16": 0.16435204446315765,
-  "average": 0.054497234523296356
+  "filename": "EarlyJoinSAGE_model_2562398a076ae1895cc2f097c9b16efe.csv",  python tiles_train.py --model=EarlyJoinSAGE --epochs 200 --configs 10 --batch 40 --losses PairwiseHingeLoss:0.5,ListMLELoss:0.5
+  "tf2_bert_pretrain_dynamic_batch_size": 0.016985692083835602,
+  "inception_v3_batch_128_train": 0.021815115585923195,
+  "resnet_v1_50_official_batch_128_bf16": 0.057517893612384796,
+  "mlperf_bert_batch_24_2x2": 0.06096338853240013,
+  "resnet50.4x4.fp16": 0.04946570843458176,
+  "bert_pretraining.4x4.fp16": 0.016652150079607964,
+  "unet_3d.4x4.bf16": 0.0679306834936142,
+  "average": 0.035901352763175964
+}{
+  "filename": "EarlyJoinResGCN_model_02e976c522de1f2c790e97f31ee4d613.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.028999989852309227,
+  "inception_v3_batch_128_train": 0.027031343430280685,
+  "resnet_v1_50_official_batch_128_bf16": 0.05556240305304527,
+  "mlperf_bert_batch_24_2x2": 0.05521760880947113,
+  "resnet50.4x4.fp16": 0.05079269036650658,
+  "bert_pretraining.4x4.fp16": 0.039152007550001144,
+  "unet_3d.4x4.bf16": 0.027049224823713303,
+  "average": 0.039516255259513855
+}{
+  "filename": "EarlyJoinResGCN_model_4d8d57c7ae07b5198f0037c08befab76.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.017652440816164017,
+  "inception_v3_batch_128_train": 0.015607158653438091,
+  "resnet_v1_50_official_batch_128_bf16": 0.058327775448560715,
+  "mlperf_bert_batch_24_2x2": 0.05319901928305626,
+  "resnet50.4x4.fp16": 0.035675350576639175,
+  "bert_pretraining.4x4.fp16": 0.011736915446817875,
+  "unet_3d.4x4.bf16": 0.027077164500951767,
+  "average": 0.029691366478800774
+}{
+  "filename": "EarlyJoinSAGE_model_033bd3e7fb929b7cddb6990ef188f483.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.024846281856298447,
+  "inception_v3_batch_128_train": 0.028517253696918488,
+  "resnet_v1_50_official_batch_128_bf16": 0.046037834137678146,
+  "mlperf_bert_batch_24_2x2": 0.05708370730280876,
+  "resnet50.4x4.fp16": 0.02867911569774151,
+  "bert_pretraining.4x4.fp16": 0.01804124005138874,
+  "unet_3d.4x4.bf16": 0.020097320899367332,
+  "average": 0.03319219872355461
 }

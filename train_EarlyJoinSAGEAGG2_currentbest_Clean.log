@@ -1,0 +1,388 @@
+2023-11-28 10:45:59.642550: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-11-28 10:45:59.644389: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-11-28 10:45:59.676019: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-11-28 10:45:59.676046: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-11-28 10:45:59.676923: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-28 10:45:59.681837: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2023-11-28 10:45:59.681994: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-11-28 10:46:00.271600: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-11-28 10:46:02.921272: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2256] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+node_feat (225459, 140)
+node_opcode (225459,)
+edge_index (236894, 2)
+config_feat (10947590, 24)
+config_runtime (10947590,)
+config_runtime_normalizers (10947590,)
+edge_ranges (5626,)
+node_ranges (5626,)
+config_ranges (5626,)
+tile_id (5625,)
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/44c1d1b5b349d53913a79a6a496c4893-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+node_feat (31699, 140)
+node_opcode (31699,)
+edge_index (33519, 2)
+config_feat (1042735, 24)
+config_runtime (1042735,)
+config_runtime_normalizers (1042735,)
+edge_ranges (677,)
+node_ranges (677,)
+config_ranges (677,)
+tile_id (676,)
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/a0d31b6910f2f0ab2ad99d48e6cecc27-cache.npz
+dataset cache file:  /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+node_feat (30749, 140)
+node_opcode (30749,)
+edge_index (31747, 2)
+config_feat (1420536, 24)
+config_runtime (1420536,)
+config_runtime_normalizers (1420536,)
+edge_ranges (845,)
+node_ranges (845,)
+config_ranges (845,)
+tile_id (844,)
+loaded from /home/yuhaoge2/data/tpugraphs/cache/tile/f49ccbd77dd342efcacfac025d19814e-cache.npz
+model_name EarlyJoinSAGEAGG2
+model_class <class 'tpu_graphs.baselines.tiles.models.EarlyJoinSAGEAGG2'>
+140/140 [==============================] - 40s 250ms/step - loss: 3.0501 - opa_metric: 0.7279 - val_loss: 2.8690 - val_opa_metric: 0.7551
+I1128 10:46:54.397321 139730075227968 train_lib.py:154]  * [@0] Validation (NEW BEST): 0.7551403641700745
+I1128 10:46:54.397936 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:46:55.545869 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 6623, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_6623, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:46:55.844488 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:46:56.301737 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:46:56.326097 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:46:56.353355 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 237ms/step - loss: 2.4638 - opa_metric: 0.7853 - val_loss: 2.2247 - val_opa_metric: 0.8145
+I1128 10:47:30.780158 139730075227968 train_lib.py:154]  * [@1] Validation (NEW BEST): 0.8144527077674866
+I1128 10:47:30.780871 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:47:31.778160 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 10082, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_10082, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:47:32.043606 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:47:32.814422 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:47:32.840979 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:47:32.872796 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 35s 236ms/step - loss: 2.1596 - opa_metric: 0.8117 - val_loss: 2.0229 - val_opa_metric: 0.8327
+I1128 10:48:07.731996 139730075227968 train_lib.py:154]  * [@2] Validation (NEW BEST): 0.832672655582428
+I1128 10:48:07.732688 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:48:08.694502 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 13512, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_13512, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:48:09.224933 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:48:09.951050 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:48:09.978378 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:48:10.009685 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 234ms/step - loss: 1.9984 - opa_metric: 0.8249 - val_loss: 1.8855 - val_opa_metric: 0.8379
+I1128 10:48:44.045428 139730075227968 train_lib.py:154]  * [@3] Validation (NEW BEST): 0.8378679752349854
+I1128 10:48:44.047321 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:48:45.076656 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 16942, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_16942, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:48:45.348927 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:48:46.092403 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:48:46.117575 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:48:46.147049 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 238ms/step - loss: 1.8799 - opa_metric: 0.8334 - val_loss: 1.8798 - val_opa_metric: 0.8373
+140/140 [==============================] - 34s 235ms/step - loss: 1.8253 - opa_metric: 0.8390 - val_loss: 1.8053 - val_opa_metric: 0.8424
+I1128 10:49:54.674430 139730075227968 train_lib.py:154]  * [@5] Validation (NEW BEST): 0.8423671126365662
+I1128 10:49:54.675127 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:49:55.645348 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 21064, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_21064, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:49:55.906646 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:49:56.901657 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:49:56.926599 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:49:56.957931 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 230ms/step - loss: 1.7532 - opa_metric: 0.8435 - val_loss: 1.6958 - val_opa_metric: 0.8516
+I1128 10:50:30.481691 139730075227968 train_lib.py:154]  * [@6] Validation (NEW BEST): 0.8516380190849304
+I1128 10:50:30.482493 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:50:31.451386 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 24494, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_24494, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:50:31.711796 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:50:32.444706 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:50:32.469501 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:50:32.499007 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 226ms/step - loss: 1.6948 - opa_metric: 0.8465 - val_loss: 1.7674 - val_opa_metric: 0.8480
+140/140 [==============================] - 33s 229ms/step - loss: 1.6544 - opa_metric: 0.8516 - val_loss: 1.6185 - val_opa_metric: 0.8574
+I1128 10:51:38.703777 139730075227968 train_lib.py:154]  * [@8] Validation (NEW BEST): 0.8573617935180664
+I1128 10:51:38.704369 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:51:39.659310 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 28616, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_28616, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:51:39.918835 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:51:40.614347 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:51:40.638579 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:51:40.665680 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 235ms/step - loss: 1.6213 - opa_metric: 0.8543 - val_loss: 1.6799 - val_opa_metric: 0.8534
+140/140 [==============================] - 34s 235ms/step - loss: 1.5825 - opa_metric: 0.8579 - val_loss: 1.6104 - val_opa_metric: 0.8588
+I1128 10:52:48.720322 139730075227968 train_lib.py:154]  * [@10] Validation (NEW BEST): 0.8588001728057861
+I1128 10:52:48.721160 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:52:49.944059 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 32738, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_32738, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:52:50.207149 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:52:50.911478 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:52:50.938459 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:52:50.966235 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 227ms/step - loss: 1.5912 - opa_metric: 0.8564 - val_loss: 1.6183 - val_opa_metric: 0.8559
+140/140 [==============================] - 33s 227ms/step - loss: 1.5586 - opa_metric: 0.8594 - val_loss: 1.6397 - val_opa_metric: 0.8572
+140/140 [==============================] - 33s 226ms/step - loss: 1.5116 - opa_metric: 0.8638 - val_loss: 1.6883 - val_opa_metric: 0.8517
+140/140 [==============================] - 33s 226ms/step - loss: 1.5037 - opa_metric: 0.8645 - val_loss: 1.5385 - val_opa_metric: 0.8623
+I1128 10:55:03.633727 139730075227968 train_lib.py:154]  * [@14] Validation (NEW BEST): 0.8623115420341492
+I1128 10:55:03.634664 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:55:04.601350 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 38244, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_38244, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:55:04.863013 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:55:05.562736 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:55:05.587278 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:55:05.614870 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 226ms/step - loss: 1.4663 - opa_metric: 0.8678 - val_loss: 1.5211 - val_opa_metric: 0.8651
+I1128 10:55:38.338776 139730075227968 train_lib.py:154]  * [@15] Validation (NEW BEST): 0.8650614023208618
+I1128 10:55:38.339401 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:55:39.488169 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 41674, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_41674, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:55:39.749351 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:55:40.468809 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:55:40.493775 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:55:40.521738 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 229ms/step - loss: 1.4956 - opa_metric: 0.8660 - val_loss: 1.5254 - val_opa_metric: 0.8623
+140/140 [==============================] - 34s 232ms/step - loss: 1.4705 - opa_metric: 0.8663 - val_loss: 1.4798 - val_opa_metric: 0.8724
+I1128 10:56:47.839111 139730075227968 train_lib.py:154]  * [@17] Validation (NEW BEST): 0.8723870515823364
+I1128 10:56:47.839773 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:56:48.790732 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 45796, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_45796, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:56:49.052379 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:56:49.765948 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:56:49.790370 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:56:49.816174 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 32s 225ms/step - loss: 1.4485 - opa_metric: 0.8689 - val_loss: 1.5315 - val_opa_metric: 0.8666
+140/140 [==============================] - 33s 225ms/step - loss: 1.4463 - opa_metric: 0.8690 - val_loss: 1.5215 - val_opa_metric: 0.8687
+140/140 [==============================] - 33s 227ms/step - loss: 1.4270 - opa_metric: 0.8710 - val_loss: 1.4544 - val_opa_metric: 0.8717
+140/140 [==============================] - 33s 225ms/step - loss: 1.4564 - opa_metric: 0.8681 - val_loss: 1.4453 - val_opa_metric: 0.8736
+I1128 10:59:00.974740 139730075227968 train_lib.py:154]  * [@21] Validation (NEW BEST): 0.8736372590065002
+I1128 10:59:00.975640 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 10:59:01.939389 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 51302, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_51302, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 10:59:02.199158 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:59:03.171501 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 10:59:03.198029 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 10:59:03.227318 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 32s 224ms/step - loss: 1.4005 - opa_metric: 0.8725 - val_loss: 1.4698 - val_opa_metric: 0.8697
+140/140 [==============================] - 33s 229ms/step - loss: 1.4068 - opa_metric: 0.8730 - val_loss: 1.4297 - val_opa_metric: 0.8714
+140/140 [==============================] - 33s 229ms/step - loss: 1.4129 - opa_metric: 0.8728 - val_loss: 1.4946 - val_opa_metric: 0.8683
+140/140 [==============================] - 33s 225ms/step - loss: 1.3993 - opa_metric: 0.8731 - val_loss: 1.4995 - val_opa_metric: 0.8689
+140/140 [==============================] - 33s 225ms/step - loss: 1.3903 - opa_metric: 0.8744 - val_loss: 1.5138 - val_opa_metric: 0.8665
+140/140 [==============================] - 33s 228ms/step - loss: 1.3969 - opa_metric: 0.8743 - val_loss: 1.5099 - val_opa_metric: 0.8732
+140/140 [==============================] - 33s 227ms/step - loss: 1.3841 - opa_metric: 0.8760 - val_loss: 1.4183 - val_opa_metric: 0.8753
+I1128 11:02:54.702033 139730075227968 train_lib.py:154]  * [@28] Validation (NEW BEST): 0.8752875328063965
+I1128 11:02:54.703030 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:02:55.672295 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 58884, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_58884, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:02:55.932667 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:02:56.663493 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:02:56.689045 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:02:56.716103 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 32s 225ms/step - loss: 1.3698 - opa_metric: 0.8768 - val_loss: 1.4063 - val_opa_metric: 0.8741
+140/140 [==============================] - 33s 226ms/step - loss: 1.3652 - opa_metric: 0.8766 - val_loss: 1.4225 - val_opa_metric: 0.8749
+140/140 [==============================] - 33s 230ms/step - loss: 1.3695 - opa_metric: 0.8755 - val_loss: 1.4385 - val_opa_metric: 0.8708
+140/140 [==============================] - 34s 238ms/step - loss: 1.3765 - opa_metric: 0.8757 - val_loss: 1.4277 - val_opa_metric: 0.8776
+I1128 11:05:09.973116 139730075227968 train_lib.py:154]  * [@32] Validation (NEW BEST): 0.8775865435600281
+I1128 11:05:09.974139 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:05:10.946151 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 64390, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_64390, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:05:11.207479 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:05:11.936509 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:05:11.960849 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:05:11.987949 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 237ms/step - loss: 1.3426 - opa_metric: 0.8795 - val_loss: 1.3709 - val_opa_metric: 0.8772
+140/140 [==============================] - 34s 236ms/step - loss: 1.3484 - opa_metric: 0.8798 - val_loss: 1.4174 - val_opa_metric: 0.8816
+I1128 11:06:20.555495 139730075227968 train_lib.py:154]  * [@34] Validation (NEW BEST): 0.8816485404968262
+I1128 11:06:20.556216 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:06:21.731415 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 68512, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_68512, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:06:21.987222 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:06:22.704394 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:06:22.731971 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:06:22.767282 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 237ms/step - loss: 1.3519 - opa_metric: 0.8782 - val_loss: 1.3811 - val_opa_metric: 0.8770
+140/140 [==============================] - 34s 236ms/step - loss: 1.3261 - opa_metric: 0.8805 - val_loss: 1.3775 - val_opa_metric: 0.8812
+140/140 [==============================] - 34s 235ms/step - loss: 1.3349 - opa_metric: 0.8793 - val_loss: 1.4187 - val_opa_metric: 0.8738
+140/140 [==============================] - 32s 225ms/step - loss: 1.3396 - opa_metric: 0.8802 - val_loss: 1.4705 - val_opa_metric: 0.8785
+140/140 [==============================] - 33s 225ms/step - loss: 1.3619 - opa_metric: 0.8775 - val_loss: 1.4215 - val_opa_metric: 0.8713
+140/140 [==============================] - 33s 222ms/step - loss: 1.3223 - opa_metric: 0.8816 - val_loss: 1.4078 - val_opa_metric: 0.8753
+140/140 [==============================] - 33s 224ms/step - loss: 1.3154 - opa_metric: 0.8819 - val_loss: 1.4747 - val_opa_metric: 0.8688
+140/140 [==============================] - 33s 225ms/step - loss: 1.3259 - opa_metric: 0.8803 - val_loss: 1.3618 - val_opa_metric: 0.8788
+140/140 [==============================] - 33s 223ms/step - loss: 1.3126 - opa_metric: 0.8826 - val_loss: 1.4068 - val_opa_metric: 0.8754
+140/140 [==============================] - 33s 223ms/step - loss: 1.3062 - opa_metric: 0.8829 - val_loss: 1.4172 - val_opa_metric: 0.8763
+140/140 [==============================] - 33s 224ms/step - loss: 1.3037 - opa_metric: 0.8837 - val_loss: 1.4258 - val_opa_metric: 0.8749
+140/140 [==============================] - 32s 223ms/step - loss: 1.3065 - opa_metric: 0.8822 - val_loss: 1.3970 - val_opa_metric: 0.8754
+140/140 [==============================] - 32s 224ms/step - loss: 1.3078 - opa_metric: 0.8822 - val_loss: 1.3718 - val_opa_metric: 0.8792
+140/140 [==============================] - 33s 224ms/step - loss: 1.2779 - opa_metric: 0.8860 - val_loss: 1.4377 - val_opa_metric: 0.8704
+140/140 [==============================] - 33s 224ms/step - loss: 1.2941 - opa_metric: 0.8845 - val_loss: 1.3912 - val_opa_metric: 0.8756
+140/140 [==============================] - 33s 226ms/step - loss: 1.2772 - opa_metric: 0.8853 - val_loss: 1.3554 - val_opa_metric: 0.8820
+I1128 11:15:12.445562 139730075227968 train_lib.py:154]  * [@50] Validation (NEW BEST): 0.8819884657859802
+I1128 11:15:12.446862 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:15:13.399391 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 82322, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_82322, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:15:13.655559 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:15:14.375267 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:15:14.399748 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:15:14.426808 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 224ms/step - loss: 1.2909 - opa_metric: 0.8835 - val_loss: 1.3999 - val_opa_metric: 0.8760
+140/140 [==============================] - 33s 226ms/step - loss: 1.2918 - opa_metric: 0.8842 - val_loss: 1.4115 - val_opa_metric: 0.8794
+140/140 [==============================] - 33s 224ms/step - loss: 1.2833 - opa_metric: 0.8845 - val_loss: 1.4000 - val_opa_metric: 0.8770
+140/140 [==============================] - 33s 225ms/step - loss: 1.2758 - opa_metric: 0.8859 - val_loss: 1.3566 - val_opa_metric: 0.8776
+140/140 [==============================] - 33s 225ms/step - loss: 1.2865 - opa_metric: 0.8849 - val_loss: 1.4716 - val_opa_metric: 0.8714
+140/140 [==============================] - 32s 224ms/step - loss: 1.2939 - opa_metric: 0.8839 - val_loss: 1.4262 - val_opa_metric: 0.8771
+140/140 [==============================] - 33s 226ms/step - loss: 1.2965 - opa_metric: 0.8853 - val_loss: 1.3484 - val_opa_metric: 0.8826
+I1128 11:19:04.392840 139730075227968 train_lib.py:154]  * [@57] Validation (NEW BEST): 0.8826333284378052
+I1128 11:19:04.394025 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:19:05.547304 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 89904, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_89904, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:19:05.804127 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:19:06.515582 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:19:06.540207 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:19:06.566977 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 224ms/step - loss: 1.2745 - opa_metric: 0.8853 - val_loss: 1.3682 - val_opa_metric: 0.8794
+140/140 [==============================] - 32s 223ms/step - loss: 1.2821 - opa_metric: 0.8851 - val_loss: 1.3968 - val_opa_metric: 0.8784
+140/140 [==============================] - 33s 224ms/step - loss: 1.2744 - opa_metric: 0.8851 - val_loss: 1.3714 - val_opa_metric: 0.8803
+140/140 [==============================] - 34s 231ms/step - loss: 1.2910 - opa_metric: 0.8842 - val_loss: 1.3560 - val_opa_metric: 0.8825
+140/140 [==============================] - 34s 236ms/step - loss: 1.2796 - opa_metric: 0.8854 - val_loss: 1.3466 - val_opa_metric: 0.8825
+140/140 [==============================] - 35s 236ms/step - loss: 1.2677 - opa_metric: 0.8869 - val_loss: 1.3322 - val_opa_metric: 0.8805
+140/140 [==============================] - 34s 236ms/step - loss: 1.2583 - opa_metric: 0.8872 - val_loss: 1.4011 - val_opa_metric: 0.8818
+140/140 [==============================] - 34s 235ms/step - loss: 1.2674 - opa_metric: 0.8866 - val_loss: 1.3796 - val_opa_metric: 0.8820
+140/140 [==============================] - 35s 237ms/step - loss: 1.2715 - opa_metric: 0.8861 - val_loss: 1.2962 - val_opa_metric: 0.8866
+I1128 11:24:10.886886 139730075227968 train_lib.py:154]  * [@66] Validation (NEW BEST): 0.8866341710090637
+I1128 11:24:10.888088 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:24:11.845974 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 98870, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_98870, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:24:12.104875 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:24:12.823586 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:24:12.848264 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:24:12.875870 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 233ms/step - loss: 1.2507 - opa_metric: 0.8882 - val_loss: 1.4157 - val_opa_metric: 0.8743
+140/140 [==============================] - 33s 223ms/step - loss: 1.2583 - opa_metric: 0.8872 - val_loss: 1.3504 - val_opa_metric: 0.8816
+140/140 [==============================] - 33s 223ms/step - loss: 1.2465 - opa_metric: 0.8876 - val_loss: 1.3398 - val_opa_metric: 0.8805
+140/140 [==============================] - 33s 224ms/step - loss: 1.2541 - opa_metric: 0.8867 - val_loss: 1.3407 - val_opa_metric: 0.8831
+140/140 [==============================] - 33s 226ms/step - loss: 1.2600 - opa_metric: 0.8878 - val_loss: 1.3830 - val_opa_metric: 0.8806
+140/140 [==============================] - 32s 223ms/step - loss: 1.2539 - opa_metric: 0.8878 - val_loss: 1.3022 - val_opa_metric: 0.8826
+140/140 [==============================] - 33s 222ms/step - loss: 1.2496 - opa_metric: 0.8887 - val_loss: 1.3413 - val_opa_metric: 0.8853
+140/140 [==============================] - 33s 222ms/step - loss: 1.2638 - opa_metric: 0.8876 - val_loss: 1.3168 - val_opa_metric: 0.8841
+140/140 [==============================] - 33s 222ms/step - loss: 1.2588 - opa_metric: 0.8873 - val_loss: 1.3737 - val_opa_metric: 0.8777
+140/140 [==============================] - 32s 223ms/step - loss: 1.2522 - opa_metric: 0.8867 - val_loss: 1.3278 - val_opa_metric: 0.8831
+140/140 [==============================] - 33s 222ms/step - loss: 1.2446 - opa_metric: 0.8885 - val_loss: 1.3476 - val_opa_metric: 0.8794
+140/140 [==============================] - 32s 222ms/step - loss: 1.2323 - opa_metric: 0.8899 - val_loss: 1.2917 - val_opa_metric: 0.8868
+I1128 11:30:46.907698 139730075227968 train_lib.py:154]  * [@78] Validation (NEW BEST): 0.886756956577301
+I1128 11:30:46.908925 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:30:48.057955 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 109912, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_109912, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:30:48.312515 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:30:49.035295 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:30:49.059948 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:30:49.086533 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 32s 223ms/step - loss: 1.2429 - opa_metric: 0.8887 - val_loss: 1.3000 - val_opa_metric: 0.8853
+140/140 [==============================] - 32s 222ms/step - loss: 1.2226 - opa_metric: 0.8923 - val_loss: 1.3497 - val_opa_metric: 0.8787
+140/140 [==============================] - 32s 222ms/step - loss: 1.2420 - opa_metric: 0.8891 - val_loss: 1.3036 - val_opa_metric: 0.8852
+140/140 [==============================] - 33s 224ms/step - loss: 1.2407 - opa_metric: 0.8890 - val_loss: 1.2999 - val_opa_metric: 0.8850
+140/140 [==============================] - 33s 222ms/step - loss: 1.2304 - opa_metric: 0.8900 - val_loss: 1.3145 - val_opa_metric: 0.8848
+140/140 [==============================] - 33s 222ms/step - loss: 1.2348 - opa_metric: 0.8897 - val_loss: 1.3721 - val_opa_metric: 0.8853
+140/140 [==============================] - 33s 223ms/step - loss: 1.2474 - opa_metric: 0.8880 - val_loss: 1.3347 - val_opa_metric: 0.8837
+140/140 [==============================] - 32s 222ms/step - loss: 1.2291 - opa_metric: 0.8898 - val_loss: 1.3185 - val_opa_metric: 0.8786
+140/140 [==============================] - 33s 222ms/step - loss: 1.2330 - opa_metric: 0.8889 - val_loss: 1.3528 - val_opa_metric: 0.8865
+140/140 [==============================] - 33s 223ms/step - loss: 1.2338 - opa_metric: 0.8887 - val_loss: 1.3042 - val_opa_metric: 0.8860
+140/140 [==============================] - 33s 222ms/step - loss: 1.2146 - opa_metric: 0.8916 - val_loss: 1.2915 - val_opa_metric: 0.8876
+I1128 11:36:48.642854 139730075227968 train_lib.py:154]  * [@89] Validation (NEW BEST): 0.8876005411148071
+I1128 11:36:48.644191 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:36:49.616435 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 120262, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_120262, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:36:49.879441 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:36:50.614483 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:36:50.641034 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:36:50.673088 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 34s 232ms/step - loss: 1.2309 - opa_metric: 0.8895 - val_loss: 1.3406 - val_opa_metric: 0.8873
+140/140 [==============================] - 34s 235ms/step - loss: 1.2259 - opa_metric: 0.8898 - val_loss: 1.3999 - val_opa_metric: 0.8826
+140/140 [==============================] - 34s 234ms/step - loss: 1.2327 - opa_metric: 0.8899 - val_loss: 1.3543 - val_opa_metric: 0.8808
+140/140 [==============================] - 34s 235ms/step - loss: 1.2316 - opa_metric: 0.8893 - val_loss: 1.3389 - val_opa_metric: 0.8829
+140/140 [==============================] - 34s 234ms/step - loss: 1.2476 - opa_metric: 0.8884 - val_loss: 1.2886 - val_opa_metric: 0.8846
+140/140 [==============================] - 34s 236ms/step - loss: 1.2185 - opa_metric: 0.8914 - val_loss: 1.2475 - val_opa_metric: 0.8919
+I1128 11:40:16.221325 139730075227968 train_lib.py:154]  * [@95] Validation (NEW BEST): 0.8919022679328918
+I1128 11:40:16.222742 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:40:17.192820 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 127152, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_127152, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:40:17.662202 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:40:18.380163 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:40:18.406138 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:40:18.435519 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 229ms/step - loss: 1.2163 - opa_metric: 0.8914 - val_loss: 1.3161 - val_opa_metric: 0.8824
+140/140 [==============================] - 33s 224ms/step - loss: 1.2280 - opa_metric: 0.8902 - val_loss: 1.4013 - val_opa_metric: 0.8778
+140/140 [==============================] - 33s 223ms/step - loss: 1.2265 - opa_metric: 0.8904 - val_loss: 1.3325 - val_opa_metric: 0.8831
+140/140 [==============================] - 33s 223ms/step - loss: 1.2151 - opa_metric: 0.8915 - val_loss: 1.3765 - val_opa_metric: 0.8798
+140/140 [==============================] - 33s 222ms/step - loss: 1.2259 - opa_metric: 0.8908 - val_loss: 1.3269 - val_opa_metric: 0.8835
+140/140 [==============================] - 33s 223ms/step - loss: 1.2187 - opa_metric: 0.8911 - val_loss: 1.3568 - val_opa_metric: 0.8862
+140/140 [==============================] - 34s 233ms/step - loss: 1.2112 - opa_metric: 0.8913 - val_loss: 1.2401 - val_opa_metric: 0.8896
+140/140 [==============================] - 34s 236ms/step - loss: 1.2102 - opa_metric: 0.8922 - val_loss: 1.2581 - val_opa_metric: 0.8902
+140/140 [==============================] - 35s 240ms/step - loss: 1.2008 - opa_metric: 0.8926 - val_loss: 1.3224 - val_opa_metric: 0.8824
+140/140 [==============================] - 34s 233ms/step - loss: 1.2044 - opa_metric: 0.8921 - val_loss: 1.2574 - val_opa_metric: 0.8907
+140/140 [==============================] - 34s 236ms/step - loss: 1.2058 - opa_metric: 0.8914 - val_loss: 1.3175 - val_opa_metric: 0.8827
+140/140 [==============================] - 33s 227ms/step - loss: 1.2071 - opa_metric: 0.8923 - val_loss: 1.3319 - val_opa_metric: 0.8884
+140/140 [==============================] - 33s 226ms/step - loss: 1.2036 - opa_metric: 0.8926 - val_loss: 1.3524 - val_opa_metric: 0.8791
+140/140 [==============================] - 34s 229ms/step - loss: 1.2302 - opa_metric: 0.8903 - val_loss: 1.3555 - val_opa_metric: 0.8816
+140/140 [==============================] - 33s 229ms/step - loss: 1.2431 - opa_metric: 0.8891 - val_loss: 1.3197 - val_opa_metric: 0.8837
+140/140 [==============================] - 33s 225ms/step - loss: 1.2023 - opa_metric: 0.8931 - val_loss: 1.2459 - val_opa_metric: 0.8920
+I1128 11:49:13.584947 139730075227968 train_lib.py:154]  * [@111] Validation (NEW BEST): 0.8919878602027893
+I1128 11:49:13.586832 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:49:14.570979 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 140962, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_140962, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:49:14.832892 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:49:15.577934 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:49:15.604893 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:49:15.637977 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 223ms/step - loss: 1.2067 - opa_metric: 0.8918 - val_loss: 1.3628 - val_opa_metric: 0.8845
+140/140 [==============================] - 33s 224ms/step - loss: 1.1980 - opa_metric: 0.8926 - val_loss: 1.3234 - val_opa_metric: 0.8831
+140/140 [==============================] - 32s 223ms/step - loss: 1.2041 - opa_metric: 0.8919 - val_loss: 1.3087 - val_opa_metric: 0.8859
+140/140 [==============================] - 32s 223ms/step - loss: 1.2062 - opa_metric: 0.8918 - val_loss: 1.3025 - val_opa_metric: 0.8878
+140/140 [==============================] - 33s 224ms/step - loss: 1.2177 - opa_metric: 0.8908 - val_loss: 1.2985 - val_opa_metric: 0.8861
+140/140 [==============================] - 32s 224ms/step - loss: 1.2028 - opa_metric: 0.8927 - val_loss: 1.3155 - val_opa_metric: 0.8850
+140/140 [==============================] - 33s 227ms/step - loss: 1.2135 - opa_metric: 0.8908 - val_loss: 1.3088 - val_opa_metric: 0.8842
+140/140 [==============================] - 32s 222ms/step - loss: 1.2070 - opa_metric: 0.8922 - val_loss: 1.3299 - val_opa_metric: 0.8806
+140/140 [==============================] - 32s 222ms/step - loss: 1.2063 - opa_metric: 0.8914 - val_loss: 1.2895 - val_opa_metric: 0.8868
+140/140 [==============================] - 32s 221ms/step - loss: 1.2050 - opa_metric: 0.8919 - val_loss: 1.3738 - val_opa_metric: 0.8774
+140/140 [==============================] - 34s 232ms/step - loss: 1.2062 - opa_metric: 0.8915 - val_loss: 1.3249 - val_opa_metric: 0.8855
+140/140 [==============================] - 34s 235ms/step - loss: 1.1917 - opa_metric: 0.8936 - val_loss: 1.2741 - val_opa_metric: 0.8912
+140/140 [==============================] - 34s 234ms/step - loss: 1.1929 - opa_metric: 0.8938 - val_loss: 1.2809 - val_opa_metric: 0.8875
+140/140 [==============================] - 34s 233ms/step - loss: 1.2209 - opa_metric: 0.8898 - val_loss: 1.2151 - val_opa_metric: 0.8928
+I1128 11:56:58.895097 139730075227968 train_lib.py:154]  * [@125] Validation (NEW BEST): 0.8928198218345642
+I1128 11:56:58.896818 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 11:56:59.888099 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 153388, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_153388, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 11:57:00.158387 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:57:01.148187 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 11:57:01.173795 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 11:57:01.207670 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+140/140 [==============================] - 33s 231ms/step - loss: 1.2003 - opa_metric: 0.8933 - val_loss: 1.2920 - val_opa_metric: 0.8874
+140/140 [==============================] - 34s 235ms/step - loss: 1.2006 - opa_metric: 0.8926 - val_loss: 1.3506 - val_opa_metric: 0.8799
+140/140 [==============================] - 34s 232ms/step - loss: 1.2065 - opa_metric: 0.8926 - val_loss: 1.2786 - val_opa_metric: 0.8850
+140/140 [==============================] - 33s 228ms/step - loss: 1.1929 - opa_metric: 0.8930 - val_loss: 1.3725 - val_opa_metric: 0.8766
+140/140 [==============================] - 34s 234ms/step - loss: 1.2026 - opa_metric: 0.8923 - val_loss: 1.3157 - val_opa_metric: 0.8866
+140/140 [==============================] - 33s 226ms/step - loss: 1.2014 - opa_metric: 0.8931 - val_loss: 1.2859 - val_opa_metric: 0.8851
+140/140 [==============================] - 33s 228ms/step - loss: 1.2052 - opa_metric: 0.8921 - val_loss: 1.3023 - val_opa_metric: 0.8878
+140/140 [==============================] - 33s 228ms/step - loss: 1.1944 - opa_metric: 0.8941 - val_loss: 1.2652 - val_opa_metric: 0.8902
+140/140 [==============================] - 32s 224ms/step - loss: 1.1817 - opa_metric: 0.8945 - val_loss: 1.2827 - val_opa_metric: 0.8867
+140/140 [==============================] - 33s 225ms/step - loss: 1.1986 - opa_metric: 0.8928 - val_loss: 1.2757 - val_opa_metric: 0.8897
+140/140 [==============================] - 33s 224ms/step - loss: 1.1819 - opa_metric: 0.8937 - val_loss: 1.2676 - val_opa_metric: 0.8897
+140/140 [==============================] - 32s 221ms/step - loss: 1.1891 - opa_metric: 0.8942 - val_loss: 1.3215 - val_opa_metric: 0.8851
+140/140 [==============================] - 32s 224ms/step - loss: 1.1964 - opa_metric: 0.8943 - val_loss: 1.3172 - val_opa_metric: 0.8839
+140/140 [==============================] - 32s 224ms/step - loss: 1.2077 - opa_metric: 0.8933 - val_loss: 1.2779 - val_opa_metric: 0.8901
+140/140 [==============================] - 33s 223ms/step - loss: 1.1849 - opa_metric: 0.8946 - val_loss: 1.2814 - val_opa_metric: 0.8883
+140/140 [==============================] - 33s 222ms/step - loss: 1.1903 - opa_metric: 0.8948 - val_loss: 1.3341 - val_opa_metric: 0.8827
+140/140 [==============================] - 33s 223ms/step - loss: 1.1922 - opa_metric: 0.8934 - val_loss: 1.2903 - val_opa_metric: 0.8876
+140/140 [==============================] - 33s 223ms/step - loss: 1.1656 - opa_metric: 0.8964 - val_loss: 1.2716 - val_opa_metric: 0.8889
+140/140 [==============================] - 33s 223ms/step - loss: 1.1766 - opa_metric: 0.8943 - val_loss: 1.3028 - val_opa_metric: 0.8864
+140/140 [==============================] - 32s 223ms/step - loss: 1.1672 - opa_metric: 0.8960 - val_loss: 1.2888 - val_opa_metric: 0.8865
+I1128 12:08:00.706729 139730075227968 train_lib.py:158] [@145] Best accuracy was attained at epoch 125. Stopping.
+I1128 12:20:17.468564 139730075227968 train_lib.py:70] wrote /home/yuhaoge2/out/tpugraphs_tiles/run_017e3974d3d5823f440fca7fa09a3ec0.jsonz
+I1128 12:20:18.778258 139730075227968 signature_serialization.py:156] Function `_wrapped_model` contains input name(s) args_0, 628093, resource with unsupported characters which will be renamed to args_0_18, early_join_sageagg2_private__op_embedding_embedding_embedding_lookup_628093, early_join_sageagg2_sequential_3_dense_6_tensordot_readvariableop_resource in the SavedModel.
+I1128 12:20:19.215287 139730075227968 save.py:289] Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+INFO:tensorflow:Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 12:20:20.038530 139730075227968 builder_impl.py:801] Assets written to: /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/assets
+I1128 12:20:20.097024 139730075227968 fingerprinting_utils.py:49] Writing fingerprint to /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0/fingerprint.pb
+I1128 12:20:20.143718 139730075227968 train_lib.py:75] wrote /home/yuhaoge2/out/tpugraphs_tiles/model_017e3974d3d5823f440fca7fa09a3ec0
+***  Wrote /home/yuhaoge2/out/tpugraphs_tiles/results_1701189962921.csv

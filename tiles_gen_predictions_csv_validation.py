@@ -37,6 +37,9 @@ _MODEL_DIRS = flags.DEFINE_string(
     'dir', None,
     'Path for the model directory. ', required=True)
 
+_NAME = flags.DEFINE_string(
+    'hash', None,
+    'hash of the model. ', required=True)
 
 def main(unused_argv: list[str]) -> None:
   dataset = data.get_npz_dataset(
@@ -46,7 +49,7 @@ def main(unused_argv: list[str]) -> None:
 
   # dirpaths = _MODEL_DIRS.value.split(',')
   dirpath = _MODEL_DIRS.value
-  dirpaths = [os.path.join(dirpath, f) for f in os.listdir(dirpath) if f.startswith('model_') and "033bd3e" in f]
+  dirpaths = [os.path.join(dirpath, f) for f in os.listdir(dirpath) if f.startswith('model_') and _NAME.value in f]
 
   # if len(dirpaths) != 1:
   #   print("Please provide exactly 1 model directory in --dirs.")

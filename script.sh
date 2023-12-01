@@ -33,24 +33,34 @@
 
 
 
-## below are script after know the current best combination: AGG + dropout
-python tiles_train.py --model=EarlyJoinSAGEAGG --epochs 200 --configs 10 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGG.log 2>&1
-echo "EarlyJoinSAGEAGG Done"
+# ## below are script after know the current best combination: AGG + dropout
+# python tiles_train.py --model=EarlyJoinSAGEAGG --epochs 200 --configs 10 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGG.log 2>&1
+# echo "EarlyJoinSAGEAGG Done"
 
-python tiles_train.py --model=EarlyJoinSAGEAGG --epochs 200 --configs 20 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGG2040.log 2>&1
-echo "EarlyJoinSAGEAGG2040 Done"
+# python tiles_train.py --model=EarlyJoinSAGEAGG --epochs 200 --configs 20 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGG2040.log 2>&1
+# echo "EarlyJoinSAGEAGG2040 Done"
 
-python tiles_train.py --model=EarlyJoinSAGEAGG --epochs 200 --configs 10 --batch 100 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGG10100.log 2>&1
-echo "EarlyJoinSAGEAGG10100 Done"
+# python tiles_train.py --model=EarlyJoinSAGEAGG --epochs 200 --configs 10 --batch 100 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGG10100.log 2>&1
+# echo "EarlyJoinSAGEAGG10100 Done"
 
-# add residual connection
-python tiles_train.py --model=EarlyJoinSAGEAGGRes --epochs 200 --configs 10 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGGRes.log 2>&1
-echo "EarlyJoinSAGEAGGRes Done"
+# # add residual connection
+# python tiles_train.py --model=EarlyJoinSAGEAGGRes --epochs 200 --configs 10 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGGRes.log 2>&1
+# echo "EarlyJoinSAGEAGGRes Done"
 
-# use feature embedding EarlyJoinSAGEAGGSplit
-python tiles_train.py --model=EarlyJoinSAGEAGGSplit --epochs 200 --configs 10 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGGSplit.log 2>&1
-echo "EarlyJoinSAGEAGGSplit Done"
+# # use feature embedding EarlyJoinSAGEAGGSplit
+# python tiles_train.py --model=EarlyJoinSAGEAGGSplit --epochs 200 --configs 10 --batch 40 --losses PairwiseLogisticLoss:1 --lr 0.000642 --clip_norm 1e9 > train_EarlyJoinSAGEAGGSplit.log 2>&1
+# echo "EarlyJoinSAGEAGGSplit Done"
 
-python tiles_gen_predictions_csv_validation.py --hash model --dir ~/out/tpugraphs_tiles/
+# python tiles_gen_predictions_csv_validation.py --hash model --dir ~/out/tpugraphs_tiles/
 
-python tiles_evaluate_csv.py --name J
+# python tiles_evaluate_csv.py --name J
+
+# baseline: LateJoinResGCN EarlyJoinResGCN LateJoinSAGE EarlyJoinSAGE 
+python tiles_train.py --model=LateJoinResGCN > LateJoinResGCN.log 2>&1
+echo "LateJoinResGCN Done"
+python tiles_train.py --model=EarlyJoinResGCN > EarlyJoinResGCN.log 2>&1
+echo "EarlyJoinResGCN Done"
+python tiles_train.py --model=LateJoinSAGE > LateJoinSAGE.log 2>&1
+echo "LateJoinSAGE Done"
+python tiles_train.py --model=EarlyJoinSAGE > EarlyJoinSAGE.log 2>&1
+echo "EarlyJoinSAGE Done"

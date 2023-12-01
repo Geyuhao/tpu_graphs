@@ -32,7 +32,6 @@ def main(unused_argv: list[str]):
             cache_dir=os.path.expanduser(train_lib._CACHE_DIR.value))
         ds = dataset.validation.get_graph_tensors_dataset()
         
-        errors = []
         errors_by_benchmark = collections.defaultdict(list)
         for graph in tqdm.tqdm(ds):
             # num_configs = int(graph.node_sets['config'].sizes[0])
@@ -41,23 +40,34 @@ def main(unused_argv: list[str]):
             
             runtimes = graph.node_sets['config']['runtimes']
             # features = graph.node_sets['config']['feats']
-            time_best = tf.reduce_min(runtimes)
-
-            if module_id not in dict:
-                print("Module not found in predictions")
-                continue
             
+            best_runtime = tf.reduce_min(runtimes)
             TopConfigs = list(map(int, dict[module_id]))
             time_model_candidates = tf.gather(runtimes, TopConfigs)
             best_of_candidates = tf.reduce_min(time_model_candidates)
-            error = float((best_of_candidates - time_best) / time_best)
-            errors_by_benchmark[benchmark].append(error)
-            errors.append(error)
+            validation_score = 2 - (best_of_candidates / best_runtime)
+            errors_by_benchmark[benchmark].append(validation_score)
+            
+            # if tf.size(runtimes) < 5:
+            #     continue
+            # time_best = tf.reduce_min(runtimes)
+            # top_5_runtimes_values, indices = tf.math.top_k(-runtimes, k=5)
+            # time_best = tf.reduce_sum(-top_5_runtimes_values)
+
+            # if module_id not in dict:
+            #     print("Module not found in predictions")
+            #     continue
+            
+            # TopConfigs = list(map(int, dict[module_id]))
+            # time_model_candidates = tf.gather(runtimes, TopConfigs)
+            # best_of_candidates = tf.reduce_sum(time_model_candidates)
+            # error = 100 * float((best_of_candidates - time_best) / time_best)
+            # errors_by_benchmark[benchmark].append(error)
             
         filename = os.path.basename(result_path)
         errors_data = {k2: float(tf.reduce_mean(v2).numpy()) for k2, v2 in errors_by_benchmark.items()}
-        average_error = float(tf.reduce_mean(errors).numpy())
-        errors_data['average'] = average_error
+        average_error = sum(errors_data.values())/len(errors_data)
+        errors_data['average'] = average_error / 5
         output_data = {'filename': filename}
         output_data.update(errors_data)
         print(json.dumps(output_data, indent=2))

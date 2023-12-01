@@ -1,9 +1,10 @@
 import os
 
 dirpath = '/home/yuhaoge2/TPU_Graphs_Cost_Model'
-dirpaths = [os.path.join(dirpath, f) for f in os.listdir(dirpath) if f.startswith('train_') and f.endswith('.log') and 'Clean' not in f]
+dirpaths = [os.path.join(dirpath, f) for f in os.listdir(dirpath) if f.endswith('.log') and 'Clean' not in f]
 
 for dirpath in dirpaths:
+    print(dirpath)
     file_to_write = dirpath.replace('.log', '_Clean.log')
     wf = open(file_to_write, "w")
 

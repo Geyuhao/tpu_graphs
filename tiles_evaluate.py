@@ -66,7 +66,7 @@ def main(unused_argv: list[str]) -> None:
       model_name = json_data['args']['model']
       model_kwargs = json.loads(json_data['args']['model_kwargs_json'])
     model_class = getattr(models, model_name)
-
+    print(f'Loading model {model_class} from  {jsonz_file}')
     # Load pythonic model.
     model = model_class(
         num_configs=json_data['args']['configs'], num_ops=dataset.num_ops,

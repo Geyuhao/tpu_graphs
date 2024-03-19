@@ -71,6 +71,7 @@ LOSS_DICT = {
     'ListMLELoss': tfr.keras.losses.ListMLELoss(temperature=10),
     'PairwiseHingeLoss': tfr.keras.losses.PairwiseHingeLoss(temperature=10),
     'MSE': tf.keras.losses.MeanSquaredError(),
+    'PairwiseLogisticLoss': tfr.keras.losses.PairwiseLogisticLoss(temperature=10),
 }
 
 
@@ -111,6 +112,8 @@ class CombinedLoss(tf.keras.losses.Loss):
                              for w, loss in self._weighted_losses]
 
   def call(self, y_true, y_pred):
+    # tf.print("y_true: ", tf.shape(y_true))
+    # tf.print("y_pred: ", tf.shape(y_pred))
     return tf.math.add_n([weight * loss(y_true, y_pred)
                           for weight, loss in self._weighted_losses])
 

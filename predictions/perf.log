@@ -1,0 +1,91 @@
+{
+  "filename": "LateJoinResGCN_model_b14d6f79d057fccfabd68cb74102b313.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9293353248758279,
+  "inception_v3_batch_128_train": 0.9663691783698483,
+  "resnet_v1_50_official_batch_128_bf16": 0.8541555804155463,
+  "mlperf_bert_batch_24_2x2": 0.9032402236268994,
+  "resnet50.4x4.fp16": 0.9026029272448591,
+  "bert_pretraining.4x4.fp16": 0.9631997278252141,
+  "unet_3d.4x4.bf16": 0.8768158375416878,
+  "average": 0.18273482285428239
+}{
+  "filename": "MLP_model_8929d6f3f7c065c335e840b3157940eb.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.8000575783883667,
+  "inception_v3_batch_128_train": 0.0782801748843658,
+  "resnet_v1_50_official_batch_128_bf16": 0.3913208277897245,
+  "mlperf_bert_batch_24_2x2": 0.7925590375948312,
+  "resnet50.4x4.fp16": 0.4403013455682091,
+  "bert_pretraining.4x4.fp16": 0.7469417638836789,
+  "unet_3d.4x4.bf16": 0.39900435541672385,
+  "average": 0.10424185952931142
+}{
+  "filename": "EarlyJoinSAGE_model_473ebb30935bfbdb85f07eca35474dd9.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9641714171885315,
+  "inception_v3_batch_128_train": 0.9548471948208194,
+  "resnet_v1_50_official_batch_128_bf16": 0.9417103304359833,
+  "mlperf_bert_batch_24_2x2": 0.9183024505280152,
+  "resnet50.4x4.fp16": 0.9435944113710806,
+  "bert_pretraining.4x4.fp16": 0.9807497495512918,
+  "unet_3d.4x4.bf16": 0.8158368306476141,
+  "average": 0.18626321098695245
+}{
+  "filename": "EarlyJoinResGCN_model_25e08a6b38c5fb4b5366eb963f0a7629.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9718572247370002,
+  "inception_v3_batch_128_train": 0.9669032832488822,
+  "resnet_v1_50_official_batch_128_bf16": 0.936625759134945,
+  "mlperf_bert_batch_24_2x2": 0.939478153248227,
+  "resnet50.4x4.fp16": 0.9405510557815325,
+  "bert_pretraining.4x4.fp16": 0.974956164653307,
+  "unet_3d.4x4.bf16": 0.9195444137042441,
+  "average": 0.18999760155737538
+}{
+  "filename": "LateJoinSAGE_model_71e98866ef4a2dd00e879883552bf391.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9330395868937155,
+  "inception_v3_batch_128_train": 0.9708224346489427,
+  "resnet_v1_50_official_batch_128_bf16": 0.896721832562326,
+  "mlperf_bert_batch_24_2x2": 0.898443290486136,
+  "resnet50.4x4.fp16": 0.9136323424281471,
+  "bert_pretraining.4x4.fp16": 0.9668830788128204,
+  "unet_3d.4x4.bf16": 0.8508571711389141,
+  "average": 0.18372570677060004
+}{
+  "filename": "EarlyJoinSAGEAGG_model_5c8e47d1ec0636094298e56617c4077d.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9844349886046105,
+  "inception_v3_batch_128_train": 0.9821919142873325,
+  "resnet_v1_50_official_batch_128_bf16": 0.9524231827877121,
+  "mlperf_bert_batch_24_2x2": 0.9514235278157883,
+  "resnet50.4x4.fp16": 0.9643304428018983,
+  "bert_pretraining.4x4.fp16": 0.9891189654550853,
+  "unet_3d.4x4.bf16": 0.9873904928261563,
+  "average": 0.1946089575593881
+}{
+  "filename": "EarlyJoinSAGEAGGBI_model_574f301164e5ae93c751546bbf0d43c9.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9785183868291928,
+  "inception_v3_batch_128_train": 0.9818997485700768,
+  "resnet_v1_50_official_batch_128_bf16": 0.9555747547002346,
+  "mlperf_bert_batch_24_2x2": 0.9367527972155214,
+  "resnet50.4x4.fp16": 0.9662795829266896,
+  "bert_pretraining.4x4.fp16": 0.9838166305818314,
+  "unet_3d.4x4.bf16": 0.9808912096315037,
+  "average": 0.19382094601300143
+}{
+  "filename": "EarlyJoinSAGEAGGSplit_model_86228bdcd96774d2e61e305e778776c6.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9817898327856557,
+  "inception_v3_batch_128_train": 0.9828842119821675,
+  "resnet_v1_50_official_batch_128_bf16": 0.9471434838195365,
+  "mlperf_bert_batch_24_2x2": 0.9537545758642276,
+  "resnet50.4x4.fp16": 0.964546006149499,
+  "bert_pretraining.4x4.fp16": 0.9807241160282841,
+  "unet_3d.4x4.bf16": 0.9677446563939192,
+  "average": 0.19367391094352257
+}{
+  "filename": "EarlyJoinSAGEAGGRes_model_b7b1e69adabc3254c3121cb5cfc87198.csv",
+  "tf2_bert_pretrain_dynamic_batch_size": 0.9732998536568904,
+  "inception_v3_batch_128_train": 0.984075539194385,
+  "resnet_v1_50_official_batch_128_bf16": 0.9443715906053008,
+  "mlperf_bert_batch_24_2x2": 0.9377664783815417,
+  "resnet50.4x4.fp16": 0.9518076891407543,
+  "bert_pretraining.4x4.fp16": 0.9837667614720791,
+  "unet_3d.4x4.bf16": 0.9851044040992101,
+  "average": 0.19314835190143317
+}

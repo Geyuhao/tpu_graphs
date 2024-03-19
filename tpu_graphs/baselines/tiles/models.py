@@ -25,12 +25,15 @@ The high-level models are:
 [GCN] Kipf and Welling, ICLR'17.
 [GraphSAGE] Hamilton et al, NeurIPS'17.
 """
-import abc
+import abc, tqdm
+import numpy as np
 
 import tensorflow as tf
 import tensorflow_gnn as tfgnn
 
 from tpu_graphs.baselines.tiles import implicit
+import pickle
+# from spektral.layers import GATConv
 
 
 class _ConfigFeatureJoiner(abc.ABC):
@@ -126,6 +129,246 @@ class _SAGE(tf.keras.Model, _ConfigFeatureJoiner):
     return tf.squeeze(self._postnet(pooled), -1)
 
 
+class _SAGEAGG(tf.keras.Model, _ConfigFeatureJoiner):
+  """Implements GraphSAGE GNN Backbone."""
+  def __init__(self, num_configs: int, num_ops: int,
+               num_gnns: int = 3, final_mlp_layers: int = 3,
+               hidden_activation: str = 'leaky_relu', hidden_dim: int = 1024,
+               op_embed_dim: int = 256):
+    super().__init__()
+    self._num_configs = num_configs
+    self._op_embedding = _OpEmbedding(num_ops, op_embed_dim)
+    self._gnn_layers = []
+    for unused_i in range(num_gnns):
+      self._gnn_layers.append(_mlp([hidden_dim], hidden_activation, use_bias=False))
+    self._postnet = _mlp(
+        [hidden_dim] * final_mlp_layers + [1], hidden_activation, use_bias=False)
+    self._activation_fn = getattr(tf.nn, hidden_activation)
+    self.dropout = tf.keras.layers.Dropout(0.1)
+
+  def call(self, graph: tfgnn.GraphTensor, training: bool = False):
+    return self.forward(graph, self._num_configs, training=training)
+  
+  def forward(
+      self, graph: tfgnn.GraphTensor, num_configs: int, training: bool = False) -> tfgnn.GraphTensor:
+    graph = self._op_embedding(graph)
+    x = self.get_op_node_features(graph, num_configs)      
+    for gnn_layer in self._gnn_layers:
+      # gather neighbor features
+      neighbor_features = tfgnn.broadcast_node_to_edges(
+        graph, 'feed', tfgnn.SOURCE, feature_value=x)
+      
+      # compute the mean of neighbor features
+      mean_neighbor_features = tfgnn.pool_edges_to_node(
+        graph, 'feed', tfgnn.TARGET, 'mean', feature_value=neighbor_features)
+
+      # combine the original features with the aggregated features
+      y = tf.concat([x, mean_neighbor_features], axis=-1)
+      
+      y = gnn_layer(y)
+      y = self._activation_fn(y)
+      y = tf.nn.l2_normalize(y, axis=-1)
+      x = y
+      
+    # TODO 3 Node final layers is the number of feedforward layers applied to node embeddings before reduction.
+    
+    pooled_mean = tfgnn.pool_nodes_to_context(graph, 'op', 'mean', feature_value=x)
+    pooled_max = tfgnn.pool_nodes_to_context(graph, 'op', 'max', feature_value=x)
+    pooled_concat = tf.concat([pooled_mean, pooled_max], axis=-1)
+    
+    pooled_concat = self.dropout(pooled_concat, training=training)
+
+    pooled = self.get_penultimate_output(pooled_concat, graph, num_configs)
+    # Pooled has shape [batch_size, num_configs, hidden_dim]
+    # _postnet maps across last channel from hidden_dim to 1.
+    return tf.squeeze(self._postnet(pooled), -1)
+
+
+class _SAGEAGGSplit(tf.keras.Model, _ConfigFeatureJoiner):
+  """Implements GraphSAGE GNN Backbone."""
+  def __init__(self, num_configs: int, num_ops: int,
+               num_gnns: int = 3, final_mlp_layers: int = 3,
+               hidden_activation: str = 'leaky_relu', hidden_dim: int = 1024,
+               op_embed_dim: int = 256):
+    super().__init__()
+    self._num_configs = num_configs
+    self._op_embedding = _OpEmbedding(num_ops, op_embed_dim)
+    self._gnn_layers = []
+    for unused_i in range(num_gnns):
+      self._gnn_layers.append(_mlp([hidden_dim], hidden_activation, use_bias=False))
+    self._postnet = _mlp(
+        [hidden_dim] * final_mlp_layers + [1], hidden_activation, use_bias=False)
+    self._activation_fn = getattr(tf.nn, hidden_activation)
+    self.dropout = tf.keras.layers.Dropout(0.1)
+    self.concat_embedding_layer = tf.keras.layers.Dense(op_embed_dim, activation='relu')
+
+  def call(self, graph: tfgnn.GraphTensor, training: bool = False):
+    return self.forward(graph, self._num_configs, training=training)
+  
+  def forward(
+      self, graph: tfgnn.GraphTensor, num_configs: int, training: bool = False) -> tfgnn.GraphTensor:
+    graph = self._op_embedding(graph) 
+    op_e, config_feature, op_f = self.get_op_node_features(graph, num_configs)     #tf.stack([graph.node_sets['op']['op_e']] * num_configs, 1), graph.node_sets['op']['config_feats'], tf.stack([graph.node_sets['op']['feats']] * num_configs, 1) 
+
+    concatenated_features = tf.concat([config_feature, op_f], axis=-1)
+    embeded_concatenated_features = self.concat_embedding_layer(concatenated_features)
+    x = tf.concat([op_e, embeded_concatenated_features, op_f], axis=-1)
+    
+    for gnn_layer in self._gnn_layers:
+      # gather neighbor features
+      neighbor_features = tfgnn.broadcast_node_to_edges(
+        graph, 'feed', tfgnn.SOURCE, feature_value=x)
+      
+      # compute the mean of neighbor features
+      mean_neighbor_features = tfgnn.pool_edges_to_node(
+        graph, 'feed', tfgnn.TARGET, 'mean', feature_value=neighbor_features)
+
+      # combine the original features with the aggregated features
+      y = tf.concat([x, mean_neighbor_features], axis=-1)
+      
+      y = gnn_layer(y)
+      y = self._activation_fn(y)
+      # y = self.dropout(y, training=training)
+      y = tf.nn.l2_normalize(y, axis=-1)
+      x = y
+      
+    # TODO 3 Node final layers is the number of feedforward layers applied to node embeddings before reduction.
+    
+    pooled_mean = tfgnn.pool_nodes_to_context(graph, 'op', 'mean', feature_value=x)
+    pooled_max = tfgnn.pool_nodes_to_context(graph, 'op', 'max', feature_value=x)
+    pooled_concat = tf.concat([pooled_mean, pooled_max], axis=-1)
+    
+    pooled_concat = self.dropout(pooled_concat, training=training)
+    
+    pooled = self.get_penultimate_output(pooled_concat, graph, num_configs)
+    # Pooled has shape [batch_size, num_configs, hidden_dim]
+    # _postnet maps across last channel from hidden_dim to 1.
+    return tf.squeeze(self._postnet(pooled), -1)
+
+
+class _SAGEAGGRes(tf.keras.Model, _ConfigFeatureJoiner):
+  """Implements GraphSAGE GNN Backbone."""
+  def __init__(self, num_configs: int, num_ops: int,
+               num_gnns: int = 3, final_mlp_layers: int = 3,
+               hidden_activation: str = 'leaky_relu', hidden_dim: int = 1024,
+               op_embed_dim: int = 256):
+    super().__init__()
+    self._num_configs = num_configs
+    self._op_embedding = _OpEmbedding(num_ops, op_embed_dim)
+    self._gnn_layers = []
+    for unused_i in range(num_gnns):
+      self._gnn_layers.append(_mlp([hidden_dim], hidden_activation, use_bias=False))
+    self._postnet = _mlp(
+        [hidden_dim] * final_mlp_layers + [1], hidden_activation, use_bias=False)
+    self._activation_fn = getattr(tf.nn, hidden_activation)
+    self.dropout = tf.keras.layers.Dropout(0.1)
+    self.proj = tf.keras.layers.Dense(hidden_dim, use_bias=False)
+
+  def call(self, graph: tfgnn.GraphTensor, training: bool = False):
+    return self.forward(graph, self._num_configs, training=training)
+  
+  def forward(
+      self, graph: tfgnn.GraphTensor, num_configs: int, training: bool = False) -> tfgnn.GraphTensor:
+    graph = self._op_embedding(graph)
+    x = self.get_op_node_features(graph, num_configs)      
+    for gnn_layer in self._gnn_layers:
+      # gather neighbor features
+      neighbor_features = tfgnn.broadcast_node_to_edges(
+        graph, 'feed', tfgnn.SOURCE, feature_value=x)
+      
+      # compute the mean of neighbor features
+      mean_neighbor_features = tfgnn.pool_edges_to_node(
+        graph, 'feed', tfgnn.TARGET, 'mean', feature_value=neighbor_features)
+
+      # combine the original features with the aggregated features
+      y = tf.concat([x, mean_neighbor_features], axis=-1)
+      
+      y = gnn_layer(y)
+      y = self._activation_fn(y)
+      y = tf.nn.l2_normalize(y, axis=-1)
+      
+      if x.shape[-1] != y.shape[-1]:
+          x_proj = self.proj(x)  # Use a projection layer to match dimensions
+      else:
+          x_proj = x
+          
+      y = y + x_proj
+      x = y
+      
+    # TODO 3 Node final layers is the number of feedforward layers applied to node embeddings before reduction.
+    
+    pooled_mean = tfgnn.pool_nodes_to_context(graph, 'op', 'mean', feature_value=x)
+    pooled_max = tfgnn.pool_nodes_to_context(graph, 'op', 'max', feature_value=x)
+    pooled_concat = tf.concat([pooled_mean, pooled_max], axis=-1)
+    
+    pooled_concat = self.dropout(pooled_concat, training=training)
+    
+    pooled = self.get_penultimate_output(pooled_concat, graph, num_configs)
+    # Pooled has shape [batch_size, num_configs, hidden_dim]
+    # _postnet maps across last channel from hidden_dim to 1.
+    return tf.squeeze(self._postnet(pooled), -1)
+
+
+class _SAGEAGGBI(tf.keras.Model, _ConfigFeatureJoiner):
+  """Implements GraphSAGE GNN Backbone."""
+  def __init__(self, num_configs: int, num_ops: int,
+               num_gnns: int = 3, final_mlp_layers: int = 3,
+               hidden_activation: str = 'leaky_relu', hidden_dim: int = 1024,
+               op_embed_dim: int = 256):
+    super().__init__()
+    self._num_configs = num_configs
+    self._op_embedding = _OpEmbedding(num_ops, op_embed_dim)
+    self._gnn_layers = []
+    for unused_i in range(num_gnns):
+      self._gnn_layers.append(_mlp([hidden_dim], hidden_activation, use_bias=False))
+    self._postnet = _mlp(
+        [hidden_dim] * final_mlp_layers + [1], hidden_activation, use_bias=False)
+    self._activation_fn = getattr(tf.nn, hidden_activation)
+    self.dropout = tf.keras.layers.Dropout(0.1)
+
+  def call(self, graph: tfgnn.GraphTensor, training: bool = False):
+    return self.forward(graph, self._num_configs, training=training)
+  
+  def forward(self, graph: tfgnn.GraphTensor, num_configs: int, training: bool = False) -> tfgnn.GraphTensor:
+    graph = self._op_embedding(graph)
+    x = self.get_op_node_features(graph, num_configs)      
+
+    for gnn_layer in self._gnn_layers:
+      # Gather neighbor features for incoming edges
+      incoming_neighbor_features = tfgnn.broadcast_node_to_edges(
+          graph, 'feed', tfgnn.TARGET, feature_value=x)
+      mean_incoming_neighbor_features = tfgnn.pool_edges_to_node(
+          graph, 'feed', tfgnn.SOURCE, 'mean', feature_value=incoming_neighbor_features)
+
+      # Gather neighbor features for outgoing edges
+      outgoing_neighbor_features = tfgnn.broadcast_node_to_edges(
+          graph, 'feed', tfgnn.SOURCE, feature_value=x)
+      mean_outgoing_neighbor_features = tfgnn.pool_edges_to_node(
+          graph, 'feed', tfgnn.TARGET, 'mean', feature_value=outgoing_neighbor_features)
+
+      # Combine the original features with the aggregated incoming and outgoing features
+      y = tf.concat([x, mean_incoming_neighbor_features, mean_outgoing_neighbor_features], axis=-1)
+
+      y = gnn_layer(y)
+      y = self._activation_fn(y)
+      y = self.dropout(y, training=training)
+      y = tf.nn.l2_normalize(y, axis=-1)
+      x = y
+      
+    # TODO 3 Node final layers is the number of feedforward layers applied to node embeddings before reduction.
+    
+    pooled_mean = tfgnn.pool_nodes_to_context(graph, 'op', 'mean', feature_value=x)
+    pooled_max = tfgnn.pool_nodes_to_context(graph, 'op', 'max', feature_value=x)
+    pooled_concat = tf.concat([pooled_mean, pooled_max], axis=-1)
+    
+    
+    pooled = self.get_penultimate_output(pooled_concat, graph, num_configs)
+    # Pooled has shape [batch_size, num_configs, hidden_dim]
+    # _postnet maps across last channel from hidden_dim to 1.
+    return tf.squeeze(self._postnet(pooled), -1)
+
+
+
 class _ResGCN(tf.keras.Model, _ConfigFeatureJoiner):
   """Implements GCN backbone with residual connections."""
 
@@ -141,6 +384,9 @@ class _ResGCN(tf.keras.Model, _ConfigFeatureJoiner):
     self._gc_layers = []
     self._activation_fn = getattr(tf.nn, hidden_activation)
     self._directed = directed
+    
+    # self.attention_layer = AttentionLayer(64)
+
     self._reduction = reduction
     self._prenet = _mlp([hidden_dim, hidden_dim], self._activation_fn)
     self._postnet = _mlp([hidden_dim, 1], self._activation_fn)
@@ -221,6 +467,33 @@ class _EarlyJoin(_ConfigFeatureJoiner):
     return graph.replace_features(node_sets={'op': op_features})
 
 
+
+class _EarlyJoinSplit(_ConfigFeatureJoiner):
+  """Joins module configuration features before applying GNN backbone."""
+
+  def get_op_node_features(
+      self, graph: tfgnn.GraphTensor, num_configs: int) -> tf.Tensor:
+    graph = _EarlyJoin.attach_config_features_on_op_nodes(graph)
+    return tf.stack([graph.node_sets['op']['op_e']] * num_configs, 1), graph.node_sets['op']['config_feats'], tf.stack([graph.node_sets['op']['feats']] * num_configs, 1)
+
+  @staticmethod
+  def attach_config_features_on_op_nodes(
+      graph: tfgnn.GraphTensor) -> tfgnn.GraphTensor:
+    """Replicates config features on every op node."""
+    # Shape: [batch_size * num_configs, feature size].
+    config_feats = graph.node_sets['config']['feats']
+    batch_size = graph.node_sets['config'].sizes.shape[0]
+    config_feats = tf.reshape(
+        config_feats, [batch_size, -1, config_feats.shape[-1]])
+    # shape: (total number of op nodes, config feats dimension)
+    op_broadcasted = tfgnn.broadcast_node_to_edges(
+        graph, 'g_op', tfgnn.SOURCE, feature_value=config_feats)
+    op_features = dict(graph.node_sets['op'].features)
+    op_features['config_feats'] = op_broadcasted
+    return graph.replace_features(node_sets={'op': op_features})
+
+
+
 class _LateJoin(_ConfigFeatureJoiner):
   """Joins module configuration features after applying GNN backbone."""
 
@@ -250,18 +523,26 @@ class _LateJoin(_ConfigFeatureJoiner):
 class LateJoinResGCN(_LateJoin, _ResGCN):
   pass
 
-
 class EarlyJoinResGCN(_EarlyJoin, _ResGCN):
   pass
-
 
 class LateJoinSAGE(_LateJoin, _SAGE):
   pass
 
-
 class EarlyJoinSAGE(_EarlyJoin, _SAGE):
   pass
 
+class EarlyJoinSAGEAGG(_EarlyJoin, _SAGEAGG):
+  pass
+
+class EarlyJoinSAGEAGGSplit(_EarlyJoinSplit, _SAGEAGGSplit):
+  pass
+
+class EarlyJoinSAGEAGGBI(_EarlyJoin, _SAGEAGGBI):
+  pass
+
+class EarlyJoinSAGEAGGRes(_EarlyJoin, _SAGEAGGRes):
+  pass
 
 class MLP(tf.keras.Model):
   """Embeds op codes, averages features across all-nodes, passing thru MLP."""
@@ -301,3 +582,4 @@ class MLP(tf.keras.Model):
     op_feats = tf.stack([op_feats] * num_configs, 1)
     op_feats = tf.concat([op_feats, config_feats], -1)
     return tf.squeeze(self._mlp(op_feats), -1)
+
